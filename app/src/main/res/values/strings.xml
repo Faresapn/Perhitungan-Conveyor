@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Perhitungan Konveyor</string>
+    <string name="title_activity_menu">MenuActivity</string>
+    <string name="title_home">Input Data</string>
+    <string name="title_dashboard">Data Sheet</string>
+    <string name="title_notifications">BOQ</string>
+</resources>
