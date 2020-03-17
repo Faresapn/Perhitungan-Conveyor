@@ -4,4 +4,26 @@
     <string name="title_home">Input Data</string>
     <string name="title_dashboard">Data Sheet</string>
     <string name="title_notifications">BOQ</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="biro_engineering">Biro Engineering</string>
+    <string name="parameter_input">PARAMETER INPUT</string>
+    <string name="data_sheet">DATA SHEET</string>
+    <string name="boq">BOQ</string>
+
+    <string-array name="working_data">
+        <item>Horizontal</item>
+        <item>Incline</item>
+        <item>Decline</item>
+    </string-array>
+    <string-array name="tipe_penggerak">
+        <item>Head</item>
+        <item>Tail</item>
+        <item>Etc</item>
+    </string-array>
+    <string-array name="tipe_konveyor">
+        <item>BELT CONVEYOR</item>
+        <item>FEEDER CONVEYOR</item>
+    </string-array>
 </resources>
