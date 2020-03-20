@@ -26,4 +26,27 @@
         <item>BELT CONVEYOR</item>
         <item>FEEDER CONVEYOR</item>
     </string-array>
+    <string-array name="kondisi_material">
+        <item>Dry</item>
+        <item>Wer(clean)</item>
+        <item>Wet(dirty)</item>
+    </string-array>
+    <string-array name="material_yang_dipindahkan">
+        <item>Coal</item>
+        <item>Coke</item>
+        <item>Concrete</item>
+        <item>Rock</item>
+        <item>Iron One</item>
+        <item>Limestone</item>
+        <item>Lime</item>
+        <item>Cement</item>
+        <item>Sulphur</item>
+        <item>Phospate</item>
+        <item>Gravel</item>
+        <item>Sand</item>
+        <item>Earth</item>
+        <item>Wood</item>
+        <item>KCL</item>
+        <item>OTHER</item>
+    </string-array>
 </resources>
