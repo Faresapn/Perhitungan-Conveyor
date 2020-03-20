@@ -11,6 +11,11 @@
     <string name="parameter_input">PARAMETER INPUT</string>
     <string name="data_sheet">DATA SHEET</string>
     <string name="boq">BOQ</string>
+    <string name="working_data">Working Data</string>
+    <string name="hopper_and_skirt">Hopper And Skirt</string>
+    <string name="conveyor_belt_data">Conveyor Belt Data</string>
+    <string name="transported_material_data">Transported Material Data</string>
+    <string name="transport_capacity">Transport Capacity</string>
 
     <string-array name="working_data">
         <item>Horizontal</item>
@@ -31,7 +36,13 @@
         <item>Wer(clean)</item>
         <item>Wet(dirty)</item>
     </string-array>
-    <string-array name="material_yang_dipindahkan">
+    <string-array name="angle">
+        <item>20</item>
+        <item>30</item>
+        <item>35</item>
+        <item>45</item>
+    </string-array>
+    <string-array name="moveMaterial">
         <item>Coal</item>
         <item>Coke</item>
         <item>Concrete</item>
@@ -47,6 +58,6 @@
         <item>Earth</item>
         <item>Wood</item>
         <item>KCL</item>
-        <item>OTHER</item>
+
     </string-array>
 </resources>
