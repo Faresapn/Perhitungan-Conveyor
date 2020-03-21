@@ -9,9 +9,11 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.faresa.perhitungankonveyor.R;
+import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,19 +22,25 @@ import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
 
 public class ParameterInputActivity extends AppCompatActivity  {
-    Spinner spinnerWorking,spinnerPenggerak,spinnerTypeConveyor,spinnerMaterialCondition,spinnerMaterialTransport,spinnerAngle;
+    Spinner spinnerWorking,spinnerPenggerak,spinnerTypeConveyor,spinnerMaterialCondition,spinnerMaterialTransport,spinnerAngle,beltwidth,spinnerLump,spinnerBeltype,spinnerGrade,spinnerSurface,spinnerSagging;
     ImageView decline,horizontal,incline;
     ImageView dua,tiga,tigalima,empatlima;
+    TextView etSpeedM,etDensityKg;
+    TextInputLayout etCapacity,etSpeedS,etWrapAngle,etHeightHop,etWidthHop,etLengthSk,etWidthSk,etHoriLength,etLiftHeight,etSlopeAngle,etCarrier,etSlope,etDensity,etSurcharge,etNpt;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_parameter_input);
-
+        beltwidth = findViewById(R.id.beltWidth);
         spinnerWorking =  findViewById(R.id.spinner_working_data);
         spinnerPenggerak = findViewById(R.id.spinner_tipe_penggerak);
         spinnerTypeConveyor = findViewById(R.id.spinner_type_conveyor);
         spinnerMaterialCondition = findViewById(R.id.ConditionMaterial);
         spinnerMaterialTransport = findViewById(R.id.moveMaterial);
+        spinnerBeltype = findViewById(R.id.beltType);
+        spinnerGrade = findViewById(R.id.spinner_grade);
+        spinnerSurface= findViewById(R.id.spinner_surface);
+        spinnerSagging = findViewById(R.id.spinner_sagging);
         spinnerAngle = findViewById(R.id.angle);
         decline = findViewById(R.id.decline);
         horizontal = findViewById(R.id.hori);
@@ -41,8 +49,9 @@ public class ParameterInputActivity extends AppCompatActivity  {
         tiga = findViewById(R.id.tigapuluh);
         tigalima = findViewById(R.id.tigalima);
         empatlima = findViewById(R.id.empatlima);
+        spinnerLump = findViewById(R.id.LumpSize);
 
-
+        //items working
         ArrayAdapter<CharSequence> adapterWorking = ArrayAdapter.createFromResource(this,
                 R.array.working_data, R.layout.spinner_items);
         adapterWorking.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -78,13 +87,6 @@ public class ParameterInputActivity extends AppCompatActivity  {
             }
         });
 
-
-//        int position = (int) spinnerWorking.getSelectedItemId();
-
-
-
-        Log.d("coba", String.valueOf(spinnerWorking.getSelectedItemId()));
-
         ArrayAdapter<CharSequence> adapterPenggerak = ArrayAdapter.createFromResource(this,
                 R.array.tipe_penggerak, R.layout.spinner_items);
         adapterPenggerak.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -96,6 +98,8 @@ public class ParameterInputActivity extends AppCompatActivity  {
         spinnerTypeConveyor.setAdapter(adapterType);
 
 
+
+        //items conveyor
         ArrayAdapter<CharSequence> adapterAngle = ArrayAdapter.createFromResource(this,
                 R.array.angle, R.layout.spinner_items);
         adapterAngle.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -138,6 +142,38 @@ public class ParameterInputActivity extends AppCompatActivity  {
             }
         });
 
+        //items belt
+        ArrayAdapter<CharSequence> adapterBelt = ArrayAdapter.createFromResource(this,
+                R.array.beltWidth, R.layout.spinner_items);
+        adapterBelt.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        beltwidth.setAdapter(adapterBelt);
+
+        ArrayAdapter<CharSequence> adapterBeltTp = ArrayAdapter.createFromResource(this,
+                R.array.beltType, R.layout.spinner_items);
+        adapterBeltTp.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerBeltype.setAdapter(adapterBeltTp);
+
+        ArrayAdapter<CharSequence> adapterGrade = ArrayAdapter.createFromResource(this,
+                R.array.gradeCover, R.layout.spinner_items);
+        adapterGrade.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerGrade.setAdapter(adapterGrade);
+
+        ArrayAdapter<CharSequence> adapterSurface = ArrayAdapter.createFromResource(this,
+                R.array.surfaceType, R.layout.spinner_items);
+        adapterSurface.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerSurface.setAdapter(adapterSurface);
+
+        ArrayAdapter<CharSequence> adapterSagging = ArrayAdapter.createFromResource(this,
+                R.array.beltSagging, R.layout.spinner_items);
+        adapterSagging.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerSagging.setAdapter(adapterSagging);
+
+
+        //items material
+        ArrayAdapter<CharSequence> adapterLump = ArrayAdapter.createFromResource(this,
+                R.array.lumpSize, R.layout.spinner_items);
+        adapterLump.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerLump.setAdapter(adapterLump);
 
         ArrayAdapter<CharSequence> adapterCondition = ArrayAdapter.createFromResource(this,
                 R.array.kondisi_material, R.layout.spinner_items);

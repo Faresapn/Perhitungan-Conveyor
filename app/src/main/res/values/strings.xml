@@ -42,6 +42,40 @@
         <item>35</item>
         <item>45</item>
     </string-array>
+    <string-array name="beltType">
+        <item>Fabric</item>
+        <item>Steel Cord</item>
+    </string-array>
+    <string-array name="gradeCover">
+        <item>JIS-S</item>
+        <item>GRADE M</item>
+        <item>Heat Resistence</item>
+        <item>Oil Resistence</item>
+        <item>Flame Resistence</item>
+        <item>Chemical Resistence</item>
+    </string-array>
+    <string-array name="surfaceType">
+        <item>Bare</item>
+        <item>Lagged</item>
+        <item>Lagged and Grooved</item>
+    </string-array>
+    <string-array name="beltSagging">
+        <item>1 %</item>
+        <item>2 %</item>
+
+    </string-array>
+    <string-array name="beltWidth">
+        <item>400  mm</item>
+        <item>500  mm</item>
+        <item>600  mm</item>
+        <item>800  mm</item>
+        <item>1000 mm</item>
+        <item>1200 mm</item>
+        <item>1400 mm</item>
+        <item>1600 mm</item>
+        <item>1800 mm</item>
+        <item>2000 mm</item>
+    </string-array>
     <string-array name="moveMaterial">
         <item>Coal</item>
         <item>Coke</item>
@@ -59,5 +93,22 @@
         <item>Wood</item>
         <item>KCL</item>
 
+    </string-array>
+    <string-array name="lumpSize">
+        <item>64  mm</item>
+        <item>75  mm</item>
+        <item>85  mm</item>
+        <item>110 mm</item>
+        <item>125 mm</item>
+        <item>145 mm</item>
+        <item>157 mm</item>
+        <item>180 mm</item>
+        <item>203 mm</item>
+        <item>215 mm</item>
+        <item>250 mm</item>
+        <item>297 mm</item>
+        <item>345 mm</item>
+        <item>400 mm</item>
+        <item>500 mm</item>
     </string-array>
 </resources>
