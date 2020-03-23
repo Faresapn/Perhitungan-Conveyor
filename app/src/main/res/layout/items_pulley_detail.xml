@@ -8,13 +8,16 @@
     tools:context=".ui.DataSheetActivity"
     android:orientation="vertical"
     android:background="#121212">
-    <LinearLayout
+    <HorizontalScrollView
         android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_height="match_parent">
-        <include
-            layout="@layout/items_pulley_detail_description">
-        </include>
-    </LinearLayout>
-
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="match_parent">
+            <include
+                layout="@layout/items_pulley_detail_description">
+            </include>
+        </LinearLayout>
+    </HorizontalScrollView>
 </ScrollView>

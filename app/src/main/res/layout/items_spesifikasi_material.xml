@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     app:cardCornerRadius="20dp"
-    android:layout_margin="12dp"
+    android:layout_margin="5dp"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
@@ -22,34 +22,139 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
+            <View
+                android:id="@+id/view2"
+                android:layout_width="match_parent"
+                android:layout_height="1.0dp"
+                android:layout_gravity="bottom"
+                android:background="#E4E4E4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+            <View
+                android:id="@+id/view3"
+                android:layout_width="match_parent"
+                android:layout_height="1.0dp"
+                android:layout_gravity="bottom"
+                android:background="#E4E4E4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView7" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1.0dp"
+                android:layout_gravity="bottom"
+                android:background="#E4E4E4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView8" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1.0dp"
+                android:layout_gravity="bottom"
+                android:background="#E4E4E4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView9" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1.0dp"
+                android:layout_gravity="bottom"
+                android:background="#E4E4E4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView11" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1.0dp"
+                android:layout_gravity="bottom"
+                android:background="#E4E4E4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView12" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1.0dp"
+                android:layout_gravity="bottom"
+                android:background="#E4E4E4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView13" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1.0dp"
+                android:layout_gravity="bottom"
+                android:background="#E4E4E4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView14" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1.0dp"
+                android:layout_gravity="bottom"
+                android:background="#E4E4E4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView15" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1.0dp"
+                android:layout_gravity="bottom"
+                android:background="#E4E4E4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView16" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1.0dp"
+                android:layout_gravity="bottom"
+                android:background="#E4E4E4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView17" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1.0dp"
+                android:layout_gravity="bottom"
+                android:background="#E4E4E4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView18" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1.0dp"
+                android:layout_gravity="bottom"
+                android:background="#E4E4E4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView19" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1.0dp"
+                android:layout_gravity="bottom"
+                android:background="#E4E4E4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView20" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1.0dp"
+                android:layout_gravity="bottom"
+                android:background="#E4E4E4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView21" />
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:text="SPESIFIKASI MATERIAL"
-                android:textAlignment="center"
                 android:textColor="#fff"
                 android:textSize="18dp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
-
             </TextView>
+
 
             <TextView
                 android:id="@+id/textView6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:text=""
                 android:textColor="#fff"
                 android:textSize="16sp"
-                android:layout_marginTop="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView2">
-            </TextView>
+                app:layout_constraintTop_toBottomOf="@+id/textView2"></TextView>
 
             <TextView
                 android:id="@+id/textView9"
@@ -58,10 +163,8 @@
                 android:text="HDPE - 3 Roll - 127/25 - 35 Degree"
                 android:textColor="#fff"
                 android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView8">
-            </TextView>
+                app:layout_constraintTop_toBottomOf="@+id/textView8"></TextView>
 
             <TextView
                 android:id="@+id/textView11"
@@ -70,10 +173,8 @@
                 android:text="HDPE - 3 Roll - 127/25 - 35 Degree"
                 android:textColor="#fff"
                 android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView9">
-            </TextView>
+                app:layout_constraintTop_toBottomOf="@+id/textView9"></TextView>
 
             <TextView
                 android:id="@+id/textView12"
@@ -82,10 +183,8 @@
                 android:text="HDPE - 3 Roll - 127/25 - 35 Degree"
                 android:textColor="#fff"
                 android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView11">
-            </TextView>
+                app:layout_constraintTop_toBottomOf="@+id/textView11"></TextView>
 
             <TextView
                 android:id="@+id/textView13"
@@ -94,10 +193,8 @@
                 android:text="HDPE - 2 Roll - 127/25 - 0 Degree"
                 android:textColor="#fff"
                 android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView12">
-            </TextView>
+                app:layout_constraintTop_toBottomOf="@+id/textView12"></TextView>
 
             <TextView
                 android:id="@+id/textView14"
@@ -106,10 +203,8 @@
                 android:text="Ø800mm - L 1400 mm;Bearing Ø210 mm"
                 android:textColor="#fff"
                 android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView13">
-            </TextView>
+                app:layout_constraintTop_toBottomOf="@+id/textView13"></TextView>
 
             <TextView
                 android:id="@+id/textView15"
@@ -118,10 +213,8 @@
                 android:text="Ø600mm -L1400mm;BRG Ø125mm"
                 android:textColor="#fff"
                 android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView14">
-            </TextView>
+                app:layout_constraintTop_toBottomOf="@+id/textView14"></TextView>
 
             <TextView
                 android:id="@+id/textView16"
@@ -130,22 +223,18 @@
                 android:text="Ø800mm - L 1400 mm;Bearing Ø180 mm"
                 android:textColor="#fff"
                 android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView15">
-            </TextView>
+                app:layout_constraintTop_toBottomOf="@+id/textView15"></TextView>
 
             <TextView
                 android:id="@+id/textView17"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="289dp"
+                android:layout_height="20dp"
                 android:text="Ø800mm - L 1400 mm;Bearing Ø110 mm"
                 android:textColor="#fff"
                 android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView16">
-            </TextView>
+                app:layout_constraintTop_toBottomOf="@+id/textView16"></TextView>
 
             <TextView
                 android:id="@+id/textView18"
@@ -154,10 +243,8 @@
                 android:text="56,3940168517219Kw/380 V/4P/50 HZ"
                 android:textColor="#fff"
                 android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView17">
-            </TextView>
+                app:layout_constraintTop_toBottomOf="@+id/textView17"></TextView>
 
             <TextView
                 android:id="@+id/textView19"
@@ -166,10 +253,8 @@
                 android:text="56,3940168517219Kw/380 V/4P/50 HZ"
                 android:textColor="#fff"
                 android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView18">
-            </TextView>
+                app:layout_constraintTop_toBottomOf="@+id/textView18"></TextView>
 
             <TextView
                 android:id="@+id/textView20"
@@ -178,10 +263,8 @@
                 android:text="Non-Ply Rubber W200x10t"
                 android:textColor="#fff"
                 android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView19">
-            </TextView>
+                app:layout_constraintTop_toBottomOf="@+id/textView19"></TextView>
 
             <TextView
                 android:id="@+id/textView21"
@@ -190,10 +273,8 @@
                 android:text="Cap. 2.5 Ton"
                 android:textColor="#fff"
                 android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView20">
-            </TextView>
+                app:layout_constraintTop_toBottomOf="@+id/textView20"></TextView>
 
             <TextView
                 android:id="@+id/textView7"
@@ -202,10 +283,10 @@
                 android:text="1400 x EP800 x 4P x 8 x 2"
                 android:textColor="#fff"
                 android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView6">
-            </TextView>
+                app:layout_constraintTop_toBottomOf="@+id/textView6"></TextView>
+
+
 
             <TextView
                 android:id="@+id/textView8"
@@ -214,10 +295,8 @@
                 android:text="3 roll - Ø127/25 - 32 deg."
                 android:textColor="#fff"
                 android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView7">
-            </TextView>
+                app:layout_constraintTop_toBottomOf="@+id/textView7"></TextView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
