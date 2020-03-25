@@ -78,10 +78,11 @@ public class ParameterInputActivity extends AppCompatActivity {
                 } else {
                     Log.d("else", "else");
                     Toast.makeText(this, "Data angle tidak valid 10/20/30", Toast.LENGTH_LONG).show();
+                    txtCosa.setText("");
                 }
-                String beltWidth =spinnerbeltwidth.getSelectedItem().toString();
-                Log.d("belt", beltWidth);
-                double csa =  (angle*((0.9*400/1000)-0.05 ));
+                double beltWidth = (double) spinnerbeltwidth.getSelectedItem();
+                Log.d("belt", String.valueOf(beltWidth));
+                double csa =  (angle*((0.9*beltWidth/1000)-0.05 ));
                 String hasilCsa = Double.toString(csa);
                 txtCsa.setText(hasilCsa);
             } catch (Exception e) {
