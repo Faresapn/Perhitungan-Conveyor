@@ -27,6 +27,9 @@
     <include layout="@layout/items_belt">
 
     </include>
+    <include layout="@layout/items_hasil">
+
+    </include>
 </LinearLayout>
 
 </ScrollView>
