@@ -1,6 +1,7 @@
 package com.faresa.perhitungankonveyor.ui;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -8,13 +9,18 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.faresa.perhitungankonveyor.R;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputLayout;
+
+import java.util.Objects;
 
 import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
@@ -26,6 +32,7 @@ public class ParameterInputActivity extends AppCompatActivity {
     TextView etSpeedM, etDensityKg, txtCosa, txtCsa;
     TextInputLayout etCapacity, etSpeedS, etWrapAngle, etHeightHop, etWidthHop, etLengthSk, etWidthSk, etHoriLength, etLiftHeight, etSlopeAngle, etCarrier, etSlope, etDensity, etSurcharge, etNpt;
     Button hitung;
+    LinearLayout linearLayout;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -61,22 +68,24 @@ public class ParameterInputActivity extends AppCompatActivity {
 
         hitung.setOnClickListener(view -> {
             try {
-                int angle = Integer.parseInt(etSurcharge.getEditText().getText().toString());
-//                String angle = Objects.requireNonNull(etSurcharge.getEditText()).getText().toString();
+                int angle = Integer.parseInt(Objects.requireNonNull(etSurcharge.getEditText()).getText().toString());
                 if (angle == (10)) {
-                    txtCosa.setText("0,1348");
-                } else if(angle ==(20)){
-                    txtCosa.setText("0,1588");
-                }else if (angle == (30)){
-                    txtCosa.setText("0,1837");
-                }else {
-
+                    txtCosa.setText("0,13");
+                } else if (angle == (20)) {
+                    txtCosa.setText("0,16");
+                } else if (angle == (30)) {
+                    txtCosa.setText("0,18");
+                } else {
+                    Log.d("else", "else");
+                    Toast.makeText(this, "Data angle tidak valid 10/20/30", Toast.LENGTH_LONG).show();
                 }
-
-                int beltWidth =  Integer.parseInt(spinnerbeltwidth.getSelectedItem().toString());
-                txtCsa.setText(beltWidth);
+                String beltWidth =spinnerbeltwidth.getSelectedItem().toString();
+                Log.d("belt", beltWidth);
+                double csa =  (angle*((0.9*400/1000)-0.05 ));
+                String hasilCsa = Double.toString(csa);
+                txtCsa.setText(hasilCsa);
             } catch (Exception e) {
-
+                Log.d("catch", "catch");
             }
         });
 
