@@ -1,45 +1,53 @@
 package com.faresa.perhitungankonveyor.ui;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.faresa.perhitungankonveyor.R;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputLayout;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Objects;
 
 import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
 
-public class ParameterInputActivity extends AppCompatActivity  {
-    Spinner spinnerWorking,spinnerPenggerak,spinnerTypeConveyor,spinnerMaterialCondition,spinnerMaterialTransport,spinnerAngle,beltwidth,spinnerLump,spinnerBeltype,spinnerGrade,spinnerSurface,spinnerSagging;
-    ImageView decline,horizontal,incline;
-    ImageView dua,tiga,tigalima,empatlima;
-    TextView etSpeedM,etDensityKg;
-    TextInputLayout etCapacity,etSpeedS,etWrapAngle,etHeightHop,etWidthHop,etLengthSk,etWidthSk,etHoriLength,etLiftHeight,etSlopeAngle,etCarrier,etSlope,etDensity,etSurcharge,etNpt;
+public class ParameterInputActivity extends AppCompatActivity {
+    Spinner spinnerWorking, spinnerPenggerak, spinnerTypeConveyor, spinnerMaterialCondition, spinnerMaterialTransport, spinnerAngle, spinnerbeltwidth, spinnerLump, spinnerBeltype, spinnerGrade, spinnerSurface, spinnerSagging;
+    ImageView decline, horizontal, incline;
+    ImageView dua, tiga, tigalima, empatlima;
+    TextView etSpeedM, etDensityKg, txtCosa, txtCsa;
+    TextInputLayout etCapacity, etSpeedS, etWrapAngle, etHeightHop, etWidthHop, etLengthSk, etWidthSk, etHoriLength, etLiftHeight, etSlopeAngle, etCarrier, etSlope, etDensity, etSurcharge, etNpt;
+    Button hitung;
+    LinearLayout linearLayout;
+
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_parameter_input);
-        beltwidth = findViewById(R.id.beltWidth);
-        spinnerWorking =  findViewById(R.id.spinner_working_data);
+        spinnerbeltwidth = findViewById(R.id.beltWidth);
+        spinnerWorking = findViewById(R.id.spinner_working_data);
         spinnerPenggerak = findViewById(R.id.spinner_tipe_penggerak);
         spinnerTypeConveyor = findViewById(R.id.spinner_type_conveyor);
         spinnerMaterialCondition = findViewById(R.id.ConditionMaterial);
         spinnerMaterialTransport = findViewById(R.id.moveMaterial);
         spinnerBeltype = findViewById(R.id.beltType);
         spinnerGrade = findViewById(R.id.spinner_grade);
-        spinnerSurface= findViewById(R.id.spinner_surface);
+        spinnerSurface = findViewById(R.id.spinner_surface);
         spinnerSagging = findViewById(R.id.spinner_sagging);
         spinnerAngle = findViewById(R.id.angle);
         decline = findViewById(R.id.decline);
@@ -51,19 +59,51 @@ public class ParameterInputActivity extends AppCompatActivity  {
         empatlima = findViewById(R.id.empatlima);
         spinnerLump = findViewById(R.id.LumpSize);
 
+        etSurcharge = findViewById(R.id.etSurcharge);
+
+        hitung = findViewById(R.id.hitung);
+        txtCosa = findViewById(R.id.Cosa);
+        txtCsa = findViewById(R.id.Csa);
+
+
+        hitung.setOnClickListener(view -> {
+            try {
+                int angle = Integer.parseInt(Objects.requireNonNull(etSurcharge.getEditText()).getText().toString());
+                if (angle == (10)) {
+                    txtCosa.setText("0,13");
+                } else if (angle == (20)) {
+                    txtCosa.setText("0,16");
+                } else if (angle == (30)) {
+                    txtCosa.setText("0,18");
+                } else {
+                    Log.d("else", "else");
+                    Toast.makeText(this, "Data angle tidak valid 10/20/30", Toast.LENGTH_LONG).show();
+                    txtCosa.setText("");
+                }
+                double beltWidth = (double) spinnerbeltwidth.getSelectedItem();
+                Log.d("belt", String.valueOf(beltWidth));
+                double csa =  (angle*((0.9*beltWidth/1000)-0.05 ));
+                String hasilCsa = Double.toString(csa);
+                txtCsa.setText(hasilCsa);
+            } catch (Exception e) {
+                Log.d("catch", "catch");
+            }
+        });
+
+        //region Spinner
         //items working
         ArrayAdapter<CharSequence> adapterWorking = ArrayAdapter.createFromResource(this,
                 R.array.working_data, R.layout.spinner_items);
         adapterWorking.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerWorking.setAdapter(adapterWorking );
+        spinnerWorking.setAdapter(adapterWorking);
         spinnerWorking.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 spinnerWorking.getSelectedItemId();
                 Log.d("cekidott", String.valueOf(spinnerWorking.getSelectedItemId()));
-                switch (position){
+                switch (position) {
 
-                    case 0 :
+                    case 0:
                         horizontal.setVisibility(VISIBLE);
                         decline.setVisibility(GONE);
                         incline.setVisibility(GONE);
@@ -87,10 +127,11 @@ public class ParameterInputActivity extends AppCompatActivity  {
             }
         });
 
+
         ArrayAdapter<CharSequence> adapterPenggerak = ArrayAdapter.createFromResource(this,
                 R.array.tipe_penggerak, R.layout.spinner_items);
         adapterPenggerak.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerPenggerak.setAdapter( adapterPenggerak);
+        spinnerPenggerak.setAdapter(adapterPenggerak);
 
         ArrayAdapter<CharSequence> adapterType = ArrayAdapter.createFromResource(this,
                 R.array.tipe_konveyor, R.layout.spinner_items);
@@ -98,20 +139,19 @@ public class ParameterInputActivity extends AppCompatActivity  {
         spinnerTypeConveyor.setAdapter(adapterType);
 
 
-
         //items conveyor
         ArrayAdapter<CharSequence> adapterAngle = ArrayAdapter.createFromResource(this,
                 R.array.angle, R.layout.spinner_items);
         adapterAngle.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerAngle.setAdapter(adapterAngle );
+        spinnerAngle.setAdapter(adapterAngle);
         spinnerAngle.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 spinnerAngle.getSelectedItemId();
                 Log.d("cekidott", String.valueOf(spinnerAngle.getSelectedItemId()));
-                switch (position){
+                switch (position) {
 
-                    case 0 :
+                    case 0:
                         dua.setVisibility(VISIBLE);
                         tiga.setVisibility(GONE);
                         tigalima.setVisibility(GONE);
@@ -137,6 +177,7 @@ public class ParameterInputActivity extends AppCompatActivity  {
                         break;
                 }
             }
+
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
             }
@@ -146,7 +187,7 @@ public class ParameterInputActivity extends AppCompatActivity  {
         ArrayAdapter<CharSequence> adapterBelt = ArrayAdapter.createFromResource(this,
                 R.array.beltWidth, R.layout.spinner_items);
         adapterBelt.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        beltwidth.setAdapter(adapterBelt);
+        spinnerbeltwidth.setAdapter(adapterBelt);
 
         ArrayAdapter<CharSequence> adapterBeltTp = ArrayAdapter.createFromResource(this,
                 R.array.beltType, R.layout.spinner_items);
@@ -184,6 +225,8 @@ public class ParameterInputActivity extends AppCompatActivity  {
                 R.array.moveMaterial, R.layout.spinner_items);
         adapterTransport.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerMaterialTransport.setAdapter(adapterTransport);
+
+        //endregion
     }
 
 }
