@@ -66,30 +66,6 @@ public class ParameterInputActivity extends AppCompatActivity {
         txtCsa = findViewById(R.id.Csa);
 
 
-        hitung.setOnClickListener(view -> {
-            try {
-                int angle = Integer.parseInt(Objects.requireNonNull(etSurcharge.getEditText()).getText().toString());
-                if (angle == (10)) {
-                    txtCosa.setText("0,13");
-                } else if (angle == (20)) {
-                    txtCosa.setText("0,16");
-                } else if (angle == (30)) {
-                    txtCosa.setText("0,18");
-                } else {
-                    Log.d("else", "else");
-                    Toast.makeText(this, "Data angle tidak valid 10/20/30", Toast.LENGTH_LONG).show();
-                    txtCosa.setText("");
-                }
-                double beltWidth = (double) spinnerbeltwidth.getSelectedItem();
-                Log.d("belt", String.valueOf(beltWidth));
-                double csa =  (angle*((0.9*beltWidth/1000)-0.05 ));
-                String hasilCsa = Double.toString(csa);
-                txtCsa.setText(hasilCsa);
-            } catch (Exception e) {
-                Log.d("catch", "catch");
-            }
-        });
-
         //region Spinner
         //items working
         ArrayAdapter<CharSequence> adapterWorking = ArrayAdapter.createFromResource(this,
@@ -188,7 +164,20 @@ public class ParameterInputActivity extends AppCompatActivity {
                 R.array.beltWidth, R.layout.spinner_items);
         adapterBelt.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerbeltwidth.setAdapter(adapterBelt);
+        spinnerbeltwidth.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                spinnerbeltwidth.getSelectedItem();
+                final String fsss = String.valueOf(spinnerbeltwidth.getSelectedItem());
+            }
 
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+       });
+        Log.d("cek", String.valueOf(spinnerbeltwidth.getSelectedItem()));
         ArrayAdapter<CharSequence> adapterBeltTp = ArrayAdapter.createFromResource(this,
                 R.array.beltType, R.layout.spinner_items);
         adapterBeltTp.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -227,6 +216,33 @@ public class ParameterInputActivity extends AppCompatActivity {
         spinnerMaterialTransport.setAdapter(adapterTransport);
 
         //endregion
+
+        hitung.setOnClickListener(view -> {
+            try {
+                int angle = Integer.parseInt(Objects.requireNonNull(etSurcharge.getEditText()).getText().toString());
+                if (angle == (10)) {
+                    txtCosa.setText("0,13");
+                } else if (angle == (20)) {
+                    txtCosa.setText("0,16");
+                } else if (angle == (30)) {
+                    txtCosa.setText("0,18");
+                } else {
+                    Log.d("else", "else");
+                    Toast.makeText(this, "Data angle tidak valid 10/20/30", Toast.LENGTH_LONG).show();
+                    txtCosa.setText("");
+                }
+
+                final double beltWidth =Double.parseDouble(String.valueOf(spinnerbeltwidth.getSelectedItem()));
+                Log.d("belt", String.valueOf(beltWidth));
+                double csa =  (angle*((0.9*beltWidth/1000)-0.05 ));
+                String hasilCsa = Double.toString(csa);
+                txtCsa.setText(hasilCsa);
+
+            } catch (Exception e) {
+
+                Log.d("catch", "catch");
+            }
+        });
     }
 
 }

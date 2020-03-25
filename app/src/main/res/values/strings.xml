@@ -65,16 +65,16 @@
 
     </string-array>
     <string-array name="beltWidth">
-        <item>400  mm</item>
-        <item>500  mm</item>
-        <item>600  mm</item>
-        <item>800  mm</item>
-        <item>1000 mm</item>
-        <item>1200 mm</item>
-        <item>1400 mm</item>
-        <item>1600 mm</item>
-        <item>1800 mm</item>
-        <item>2000 mm</item>
+        <item>400 </item>
+        <item>500 </item>
+        <item>600 </item>
+        <item>800 </item>
+        <item>1000</item>
+        <item>1200</item>
+        <item>1400</item>
+        <item>1600</item>
+        <item>1800</item>
+        <item>2000</item>
     </string-array>
     <string-array name="moveMaterial">
         <item>Coal</item>
