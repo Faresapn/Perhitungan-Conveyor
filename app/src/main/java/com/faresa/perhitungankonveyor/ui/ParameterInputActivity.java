@@ -162,8 +162,7 @@ public class ParameterInputActivity extends AppCompatActivity {
                 R.array.beltWidth, R.layout.spinner_items);
         adapterBelt.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerbeltwidth.setAdapter(adapterBelt);
-        spinnerbeltwidth.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
-        {
+        spinnerbeltwidth.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 spinnerbeltwidth.getSelectedItem();
@@ -174,7 +173,7 @@ public class ParameterInputActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) {
 
             }
-       });
+        });
         Log.d("cek", String.valueOf(spinnerbeltwidth.getSelectedItem()));
         ArrayAdapter<CharSequence> adapterBeltTp = ArrayAdapter.createFromResource(this,
                 R.array.beltType, R.layout.spinner_items);
@@ -216,7 +215,7 @@ public class ParameterInputActivity extends AppCompatActivity {
         //endregion
 
         hitung.setOnClickListener(view -> {
-            if (validateEtSurcharge()){
+            if (validateEtSurcharge()) {
                 try {
                     int angle = Integer.parseInt(Objects.requireNonNull(etSurcharge.getEditText()).getText().toString());
                     if (angle == (10)) {
@@ -227,36 +226,43 @@ public class ParameterInputActivity extends AppCompatActivity {
                         txtCosa.setText("0.18");
                     } else {
                         Log.d("else", "else");
-                        Toast.makeText(this, "Data angle tidak valid 10/20/30", Toast.LENGTH_LONG).show();
+                        Toast.makeText(this, "Data surcharge tidak valid \n masukan 10/20/30", Toast.LENGTH_LONG).show();
                         txtCosa.setText("");
                     }
 
-                    final double beltWidth =Double.parseDouble(String.valueOf(spinnerbeltwidth.getSelectedItem()));
+                    final double beltWidth = Double.parseDouble(String.valueOf(spinnerbeltwidth.getSelectedItem()));
                     Log.d("belt", String.valueOf(beltWidth));
                     String strCosa = txtCosa.getText().toString();
                     double getCosa = Double.parseDouble(strCosa);
-                    Log.d("getcosa", txtCosa.toString());
-                    double csa =  (getCosa*((0.9*beltWidth/1000)-0.05 ));
+                    double csa = (getCosa * ((0.9 * beltWidth / 1000) - 0.05));
                     String hasilCsa = Double.toString(csa);
                     txtCsa.setText(hasilCsa);
 
-                } catch (Exception e) {
+                    Log.d("getcosa", txtCosa.toString());
 
+
+                } catch (Exception e) {
+                    Toast.makeText(this, "Data surcharge tidak valid \n masukan 10/20/30", Toast.LENGTH_LONG).show();
+                    txtCosa.setText("");
+                    txtCsa.setText("");
                     Log.d("catch", "catch");
                 }
-            }else{
+            } else {
                 Toast.makeText(this, "Mohon Masukan Surcharge Angle", Toast.LENGTH_LONG).show();
+                txtCosa.setText("");
+
             }
 
         });
     }
+
     private boolean validateEtSurcharge() {
         String surcharge = (Objects.requireNonNull(etSurcharge.getEditText())).getText().toString().trim();
 
         if (surcharge.isEmpty()) {
-            etSurcharge.setError("Email tidak boleh kosong");
+            etSurcharge.setError("Ini tidak boleh kosong");
             return false;
-        }  else {
+        } else {
             etSurcharge.setError(null);
             return true;
         }
