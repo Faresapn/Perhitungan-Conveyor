@@ -2,6 +2,8 @@ package com.faresa.perhitungankonveyor.ui;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -27,11 +29,11 @@ public class ParameterInputActivity extends AppCompatActivity {
     Spinner spinnerWorking, spinnerPenggerak, spinnerTypeConveyor, spinnerMaterialCondition, spinnerMaterialTransport, spinnerAngle, spinnerbeltwidth, spinnerLump, spinnerBeltype, spinnerGrade, spinnerSurface, spinnerSagging;
     ImageView decline, horizontal, incline;
     ImageView dua, tiga, tigalima, empatlima;
-    TextView etSpeedM, etDensityKg, txtCosa, txtCsa;
-    TextInputLayout etCapacity, etSpeedS, etWrapAngle, etHeightHop, etWidthHop, etLengthSk, etWidthSk, etHoriLength, etLiftHeight, etSlopeAngle, etCarrier, etSlope, etDensity, etSurcharge, etNpt;
+    TextView etSpeedM, etDensityKg, txtCosa, txtCsa,txtcalcu,txtSlope,txtCapacity;
+    TextInputLayout etCapacity, etSpeedS, etWrapAngle, etHeightHop, etWidthHop, etLengthSk, etWidthSk, etHoriLength, etLiftHeight, etCarrier, etSlope, etDensity, etSurcharge, etNpt;
     Button hitung;
     LinearLayout linearLayout;
-
+    double convertSpeed,convertBerat,Qt,Convertslope;
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,11 +53,98 @@ public class ParameterInputActivity extends AppCompatActivity {
         decline = findViewById(R.id.decline);
         horizontal = findViewById(R.id.hori);
         incline = findViewById(R.id.incline);
+        txtSlope = findViewById(R.id.etSlopeAngle);
         dua = findViewById(R.id.duapuluh);
         tiga = findViewById(R.id.tigapuluh);
+        txtcalcu = findViewById(R.id.calcu);
         tigalima = findViewById(R.id.tigalima);
         empatlima = findViewById(R.id.empatlima);
         spinnerLump = findViewById(R.id.LumpSize);
+        etSpeedS = findViewById(R.id.etSpeedS);
+        etSpeedM = findViewById(R.id.etSpeedM);
+        etDensityKg = findViewById(R.id.etDensityKg);
+        etDensity = findViewById(R.id.etDensity);
+        etLiftHeight = findViewById(R.id.etLiftHeight);
+        etHoriLength = findViewById(R.id.etHoriLength);
+        etCapacity = findViewById(R.id.etCapacity);
+        txtCapacity = findViewById(R.id.capa);
+        etLiftHeight.getEditText().addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                double ethorilength = Double.parseDouble(etHoriLength.getEditText().getText().toString().trim());
+                double etliftheight = Double.parseDouble(etLiftHeight.getEditText().getText().toString().trim());
+                Convertslope = etliftheight/ethorilength;
+                txtSlope.setText(Double.toString(Convertslope));
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+        etHoriLength.getEditText().addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                etHoriLength.getEditText().getText().toString().trim();
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+
+
+        etDensity.getEditText().addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                final double speed = Double.parseDouble(etDensity.getEditText().getText().toString().trim());
+
+                convertBerat = speed * 1000;
+                etDensityKg.setText(Double.toString(convertBerat));
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+        etSpeedS.getEditText().addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                final double speed = Double.parseDouble(etSpeedS.getEditText().getText().toString().trim());
+
+                convertSpeed = speed * 60;
+                etSpeedM.setText(Double.toString(convertSpeed));
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
 
         etSurcharge = findViewById(R.id.etSurcharge);
 
@@ -237,8 +326,19 @@ public class ParameterInputActivity extends AppCompatActivity {
                     double csa = (getCosa * ((0.9 * beltWidth / 1000) - 0.05));
                     String hasilCsa = Double.toString(csa);
                     txtCsa.setText(hasilCsa);
+                    double kecepatan  = Double.parseDouble(etSpeedM.getText().toString());
+                    double densiti = Double.parseDouble(etDensityKg.getText().toString());
+                    double SlopeAngel = Double.parseDouble(txtSlope.getText().toString());
 
+                    Qt = 60*kecepatan*densiti*SlopeAngel*csa;
+                    txtcalcu.setText(Double.toString(Qt));
                     Log.d("getcosa", txtCosa.toString());
+                    double capacity = Double.parseDouble(etCapacity.getEditText().getText().toString().trim());
+                    if (Qt>capacity){
+                        txtCapacity.setText("Acc");
+                    }else {
+                        txtCapacity.setText("ditolak");
+                    }
 
 
                 } catch (Exception e) {
