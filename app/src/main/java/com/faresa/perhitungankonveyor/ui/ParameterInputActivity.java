@@ -29,11 +29,12 @@ public class ParameterInputActivity extends AppCompatActivity {
     Spinner spinnerWorking, spinnerPenggerak, spinnerTypeConveyor, spinnerMaterialCondition, spinnerMaterialTransport, spinnerAngle, spinnerbeltwidth, spinnerLump, spinnerBeltype, spinnerGrade, spinnerSurface, spinnerSagging;
     ImageView decline, horizontal, incline;
     ImageView dua, tiga, tigalima, empatlima;
-    TextView etSpeedM, etDensityKg, txtCosa, txtCsa,txtcalcu,txtSlope,txtCapacity;
+    TextView etSpeedM, etDensityKg, txtCosa, txtCsa, txtcalcu, txtSlope, txtCapacity;
     TextInputLayout etCapacity, etSpeedS, etWrapAngle, etHeightHop, etWidthHop, etLengthSk, etWidthSk, etHoriLength, etLiftHeight, etCarrier, etSlope, etDensity, etSurcharge, etNpt;
     Button hitung;
     LinearLayout linearLayout;
-    double convertSpeed,convertBerat,Qt,Convertslope;
+    double convertSpeed, convertBerat, Qt, Convertslope;
+
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,83 +69,92 @@ public class ParameterInputActivity extends AppCompatActivity {
         etHoriLength = findViewById(R.id.etHoriLength);
         etCapacity = findViewById(R.id.etCapacity);
         txtCapacity = findViewById(R.id.capa);
-        etLiftHeight.getEditText().addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-                double ethorilength = Double.parseDouble(etHoriLength.getEditText().getText().toString().trim());
-                double etliftheight = Double.parseDouble(etLiftHeight.getEditText().getText().toString().trim());
-                Convertslope = etliftheight/ethorilength;
-                txtSlope.setText(Double.toString(Convertslope));
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
-        etHoriLength.getEditText().addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                etHoriLength.getEditText().getText().toString().trim();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
+        try {
 
 
+            etLiftHeight.getEditText().addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-        etDensity.getEditText().addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                }
 
-            }
+                @Override
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
 
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                final double speed = Double.parseDouble(etDensity.getEditText().getText().toString().trim());
+                    double ethorilength = Double.parseDouble(etHoriLength.getEditText().getText().toString().trim());
+                    double etliftheight = Double.parseDouble(etLiftHeight.getEditText().getText().toString().trim());
+                    Convertslope = etliftheight / ethorilength;
+                    txtSlope.setText(Double.toString(Convertslope));
+                }
 
-                convertBerat = speed * 1000;
-                etDensityKg.setText(Double.toString(convertBerat));
-            }
+                @Override
+                public void afterTextChanged(Editable s) {
 
-            @Override
-            public void afterTextChanged(Editable s) {
+                }
+            });
+            etHoriLength.getEditText().addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-            }
-        });
-        etSpeedS.getEditText().addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                }
 
-            }
+                @Override
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
+                    etHoriLength.getEditText().getText().toString().trim();
+                }
 
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                final double speed = Double.parseDouble(etSpeedS.getEditText().getText().toString().trim());
+                @Override
+                public void afterTextChanged(Editable s) {
 
-                convertSpeed = speed * 60;
-                etSpeedM.setText(Double.toString(convertSpeed));
-            }
+                }
+            });
 
-            @Override
-            public void afterTextChanged(Editable s) {
 
-            }
-        });
+            etDensity.getEditText().addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                }
+
+                @Override
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
+                    if (etDensity != null){
+                        final double speed = Double.parseDouble(etDensity.getEditText().getText().toString().trim());
+                        convertBerat = speed * 1000;
+                        etDensityKg.setText(Double.toString(convertBerat));
+                    }else{
+                        Log.d("density", "yy");
+                    }
+
+                }
+
+                @Override
+                public void afterTextChanged(Editable s) {
+
+                }
+            });
+            etSpeedS.getEditText().addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                }
+
+                @Override
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
+                    final double speed = Double.parseDouble(etSpeedS.getEditText().getText().toString().trim());
+
+                    convertSpeed = speed * 60;
+                    etSpeedM.setText(Double.toString(convertSpeed));
+                }
+
+                @Override
+                public void afterTextChanged(Editable s) {
+
+                }
+            });
+        }catch(Exception e){
+            Log.d(String.valueOf(e), "TextWatcher");
+        }
 
         etSurcharge = findViewById(R.id.etSurcharge);
 
@@ -304,7 +314,7 @@ public class ParameterInputActivity extends AppCompatActivity {
         //endregion
 
         hitung.setOnClickListener(view -> {
-            if (validateEtSurcharge()) {
+            if (validateEtSurcharge() | validateEtCapacity() | validateEtDensity() | validateEtHoriLength() | validateEtLiftHeight() | validateEtSpeedS()) {
                 try {
                     int angle = Integer.parseInt(Objects.requireNonNull(etSurcharge.getEditText()).getText().toString());
                     if (angle == (10)) {
@@ -326,17 +336,17 @@ public class ParameterInputActivity extends AppCompatActivity {
                     double csa = (getCosa * ((0.9 * beltWidth / 1000) - 0.05));
                     String hasilCsa = Double.toString(csa);
                     txtCsa.setText(hasilCsa);
-                    double kecepatan  = Double.parseDouble(etSpeedM.getText().toString());
+                    double kecepatan = Double.parseDouble(etSpeedM.getText().toString());
                     double densiti = Double.parseDouble(etDensityKg.getText().toString());
                     double SlopeAngel = Double.parseDouble(txtSlope.getText().toString());
 
-                    Qt = 60*kecepatan*densiti*SlopeAngel*csa;
+                    Qt = 60 * kecepatan * densiti * SlopeAngel * csa;
                     txtcalcu.setText(Double.toString(Qt));
                     Log.d("getcosa", txtCosa.toString());
                     double capacity = Double.parseDouble(etCapacity.getEditText().getText().toString().trim());
-                    if (Qt>capacity){
+                    if (Qt > capacity) {
                         txtCapacity.setText("Acc");
-                    }else {
+                    } else {
                         txtCapacity.setText("ditolak");
                     }
 
@@ -356,6 +366,7 @@ public class ParameterInputActivity extends AppCompatActivity {
         });
     }
 
+    //region validation
     private boolean validateEtSurcharge() {
         String surcharge = (Objects.requireNonNull(etSurcharge.getEditText())).getText().toString().trim();
 
@@ -367,6 +378,62 @@ public class ParameterInputActivity extends AppCompatActivity {
             return true;
         }
     }
+    private boolean validateEtCapacity() {
+        String capacity = (Objects.requireNonNull(etCapacity.getEditText())).getText().toString().trim();
 
+        if (capacity.isEmpty()) {
+            etCapacity.setError("Ini tidak boleh kosong");
+            return false;
+        } else {
+            etCapacity.setError(null);
+            return true;
+        }
+    }
+    private boolean validateEtSpeedS() {
+        String speedS = (Objects.requireNonNull(etSpeedS.getEditText())).getText().toString().trim();
+
+        if (speedS.isEmpty()) {
+            etSpeedS.setError("Ini tidak boleh kosong");
+            return    false;
+        } else {
+            etSpeedS.setError(null);
+            return true;
+        }
+    }
+    private boolean validateEtHoriLength() {
+        String horiLength = (Objects.requireNonNull(etHoriLength.getEditText())).getText().toString().trim();
+
+        if (horiLength.isEmpty()) {
+            etHoriLength.setError("Ini tidak boleh kosong");
+            return false;
+        } else {
+            etHoriLength.setError(null);
+            return true;
+        }
+    }
+    private boolean validateEtLiftHeight() {
+        String liftHeight = (Objects.requireNonNull(etLiftHeight.getEditText())).getText().toString().trim();
+
+        if (liftHeight.isEmpty()) {
+            etLiftHeight.setError("Ini tidak boleh kosong");
+            return false;
+        } else {
+            etLiftHeight.setError(null);
+            return true;
+        }
+    }
+
+    private boolean validateEtDensity() {
+        String density = (Objects.requireNonNull(etDensity.getEditText())).getText().toString().trim();
+
+        if (density.isEmpty()) {
+            etDensity.setError("Ini tidak boleh kosong");
+            return false;
+        } else {
+            etDensity.setError(null);
+            return true;
+        }
+    }
+//endregion
 
 }
