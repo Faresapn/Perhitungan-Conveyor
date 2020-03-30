@@ -1,6 +1,7 @@
 package com.faresa.perhitungankonveyor.ui;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -31,7 +32,7 @@ public class ParameterInputActivity extends AppCompatActivity {
     ImageView dua, tiga, tigalima, empatlima;
     TextView etSpeedM, etDensityKg, txtCosa, txtCsa,txtcalcu,txtSlope,txtCapacity;
     TextInputLayout etCapacity, etSpeedS, etWrapAngle, etHeightHop, etWidthHop, etLengthSk, etWidthSk, etHoriLength, etLiftHeight, etCarrier, etSlope, etDensity, etSurcharge, etNpt;
-    Button hitung;
+    Button hitung,reset,datasheet,boq;
     LinearLayout linearLayout;
     double convertSpeed,convertBerat,Qt,Convertslope;
     @SuppressLint("SetTextI18n")
@@ -44,6 +45,8 @@ public class ParameterInputActivity extends AppCompatActivity {
         spinnerPenggerak = findViewById(R.id.spinner_tipe_penggerak);
         spinnerTypeConveyor = findViewById(R.id.spinner_type_conveyor);
         spinnerMaterialCondition = findViewById(R.id.ConditionMaterial);
+        datasheet = findViewById(R.id.datasheet);
+        boq = findViewById(R.id.boq);
         spinnerMaterialTransport = findViewById(R.id.moveMaterial);
         spinnerBeltype = findViewById(R.id.beltType);
         spinnerGrade = findViewById(R.id.spinner_grade);
@@ -68,6 +71,21 @@ public class ParameterInputActivity extends AppCompatActivity {
         etHoriLength = findViewById(R.id.etHoriLength);
         etCapacity = findViewById(R.id.etCapacity);
         txtCapacity = findViewById(R.id.capa);
+
+        boq.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ParameterInputActivity.this,BoqActivity.class);
+                startActivity(intent);
+            }
+        });
+        datasheet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ParameterInputActivity.this,DataSheetActivity.class);
+                startActivity(intent);
+            }
+        });
         etLiftHeight.getEditText().addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -339,8 +357,6 @@ public class ParameterInputActivity extends AppCompatActivity {
                     }else {
                         txtCapacity.setText("ditolak");
                     }
-
-
                 } catch (Exception e) {
                     Toast.makeText(this, "Data surcharge tidak valid \n masukan 10/20/30", Toast.LENGTH_LONG).show();
                     txtCosa.setText("");
