@@ -1,6 +1,7 @@
 package com.faresa.perhitungankonveyor.ui;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -31,7 +32,7 @@ public class ParameterInputActivity extends AppCompatActivity {
     ImageView dua, tiga, tigalima, empatlima;
     TextView etSpeedM, etDensityKg, txtCosa, txtCsa, txtcalcu, txtSlope, txtCapacity;
     TextInputLayout etCapacity, etSpeedS, etWrapAngle, etHeightHop, etWidthHop, etLengthSk, etWidthSk, etHoriLength, etLiftHeight, etCarrier, etSlope, etDensity, etSurcharge, etNpt;
-    Button hitung;
+    Button hitung,reset,boq,sheet;
     LinearLayout linearLayout;
     double convertSpeed, convertBerat, Qt, Convertslope;
 
@@ -69,6 +70,25 @@ public class ParameterInputActivity extends AppCompatActivity {
         etHoriLength = findViewById(R.id.etHoriLength);
         etCapacity = findViewById(R.id.etCapacity);
         txtCapacity = findViewById(R.id.capa);
+        boq = findViewById(R.id.boq);
+        sheet = findViewById(R.id.datasheet);
+
+        boq.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ParameterInputActivity.this,BoqActivity.class);
+                startActivity(intent);
+
+            }
+        });
+        sheet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ParameterInputActivity.this,DataSheetActivity.class);
+                startActivity(intent);
+
+            }
+        });
         try {
 
 
