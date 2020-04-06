@@ -57,23 +57,12 @@
             android:id="@+id/button2"
             android:layout_width="150dp"
             android:layout_height="100dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="56dp"
             android:background="#ffffff"
-            android:text="@string/data_sheet"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button">
-        </Button>
-
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="150dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="32dp"
-            android:background="#ffffff"
-            android:text="@string/boq"
+            android:text="Screw Conveyor"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button">
-        </Button>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button"></Button>
 
         <TextView
             android:layout_width="wrap_content"
@@ -83,8 +72,7 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button3"></TextView>
+            app:layout_constraintStart_toStartOf="parent"></TextView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

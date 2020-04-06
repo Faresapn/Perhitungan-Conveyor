@@ -20,8 +20,7 @@ public class MainActivity extends AppCompatActivity {
     Button button2;
     @BindView(R.id.button)
     Button button;
-    @BindView(R.id.button3)
-    Button button3;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.button2)
     public void onViewClicked() {
-        Intent intent5 = new Intent(MainActivity.this, DataSheetActivity.class);
+        Intent intent5 = new Intent(MainActivity.this, ScrewActivity.class);
         startActivity(intent5);
     }
 
@@ -42,9 +41,5 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent6);
     }
 
-    @OnClick(R.id.button3)
-    public void onButton3Clicked() {
-        Intent intent7 = new Intent(MainActivity.this, BoqActivity.class);
-        startActivity(intent7);
-    }
+
 }
