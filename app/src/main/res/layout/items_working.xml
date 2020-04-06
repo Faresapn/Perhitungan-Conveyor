@@ -115,7 +115,7 @@
                     android:layout_marginBottom="8dp"
                     android:backgroundTint="#fff"
                     android:hint="Design Capacity(ton/hours)"
-                    android:inputType="text"
+                    android:inputType="number"
                     android:paddingBottom="15dp"
                     android:textColor="#fff"
                     android:textSize="16sp" />
@@ -137,7 +137,7 @@
                     android:layout_marginBottom="8dp"
                     android:backgroundTint="#fff"
                     android:hint="Speed (m/s)"
-                    android:inputType="text"
+                    android:inputType="number"
                     android:paddingBottom="15dp"
                     android:textColor="#fff"
                     android:textSize="16sp" />
@@ -171,7 +171,7 @@
                     android:layout_marginBottom="8dp"
                     android:backgroundTint="#fff"
                     android:hint="Designed Wrap Angle"
-                    android:inputType="text"
+                    android:inputType="number"
                     android:paddingBottom="15dp"
                     android:textColor="#fff"
                     android:textSize="16sp" />
