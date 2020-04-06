@@ -44,35 +44,25 @@
 
         <Button
             android:id="@+id/button"
-            android:layout_width="150dp"
-            android:layout_height="100dp"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
             android:layout_marginTop="32dp"
             android:background="#ffffff"
             android:text="@string/parameter_input"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView"/>
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
         <Button
             android:id="@+id/button2"
-            android:layout_width="150dp"
-            android:layout_height="100dp"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
             android:background="#ffffff"
-            android:text="@string/data_sheet"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView">
-        </Button>
-
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="150dp"
-            android:layout_height="100dp"
-            android:background="#ffffff"
-            android:text="@string/boq"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="Screw Conveyor"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView"></Button>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button"></Button>
 
         <TextView
             android:layout_width="wrap_content"
@@ -83,8 +73,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button">
-        </TextView>
+            app:layout_constraintTop_toBottomOf="@+id/button"
+            app:layout_constraintVertical_bias="0.86"></TextView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
