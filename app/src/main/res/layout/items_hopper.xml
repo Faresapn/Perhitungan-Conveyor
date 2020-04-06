@@ -50,7 +50,7 @@
                     android:layout_marginBottom="8dp"
                     android:backgroundTint="#fff"
                     android:hint="Height Hopper(M)"
-                    android:inputType="text"
+                    android:inputType="number"
                     android:paddingBottom="15dp"
                     android:textColor="#fff"
                     android:textSize="16sp" />
@@ -72,7 +72,7 @@
                     android:layout_marginBottom="8dp"
                     android:backgroundTint="#fff"
                     android:hint="Width Bottom Hopper(M)"
-                    android:inputType="text"
+                    android:inputType="number"
                     android:paddingBottom="15dp"
                     android:textColor="#fff"
                     android:textSize="16sp" />
@@ -93,7 +93,7 @@
                     android:layout_marginBottom="8dp"
                     android:backgroundTint="#fff"
                     android:hint="Length Skirt(lk)"
-                    android:inputType="text"
+                    android:inputType="number"
                     android:paddingBottom="15dp"
                     android:textColor="#fff"
                     android:textSize="16sp" />
@@ -117,7 +117,7 @@
                     android:layout_marginBottom="8dp"
                     android:backgroundTint="#fff"
                     android:hint="Width Skirt (Cq)"
-                    android:inputType="text"
+                    android:inputType="number"
                     android:paddingBottom="15dp"
                     android:textColor="#fff"
                     android:textSize="16sp" />

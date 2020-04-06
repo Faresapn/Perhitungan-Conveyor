@@ -100,11 +100,17 @@ public class ParameterInputActivity extends AppCompatActivity {
 
                 @Override
                 public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-                    double ethorilength = Double.parseDouble(etHoriLength.getEditText().getText().toString().trim());
-                    double etliftheight = Double.parseDouble(etLiftHeight.getEditText().getText().toString().trim());
-                    Convertslope = etliftheight / ethorilength;
-                    txtSlope.setText(Double.toString(Convertslope));
+                    String horiLengthS = etHoriLength.getEditText().getText().toString().trim();
+                    String liftHeightS = etLiftHeight.getEditText().getText().toString().trim();
+                    if (!horiLengthS.isEmpty() || !liftHeightS.isEmpty()){
+                        double ethorilength = Double.parseDouble(horiLengthS);
+                        double etliftheight = Double.parseDouble(liftHeightS);
+                        Convertslope = etliftheight / ethorilength;
+                        txtSlope.setText(Double.toString(Convertslope));
+                    }
+                   else {
+                       txtSlope.setText("");
+                    }
                 }
 
                 @Override
@@ -138,12 +144,13 @@ public class ParameterInputActivity extends AppCompatActivity {
 
                 @Override
                 public void onTextChanged(CharSequence s, int start, int before, int count) {
-                    if (etDensity != null){
-                        final double speed = Double.parseDouble(etDensity.getEditText().getText().toString().trim());
+                    String densityS = etDensity.getEditText().getText().toString().trim();
+                    if (!densityS.isEmpty()){
+                        final double speed = Double.parseDouble(densityS);
                         convertBerat = speed * 1000;
                         etDensityKg.setText(Double.toString(convertBerat));
                     }else{
-                        Log.d("density", "yy");
+                        etDensityKg.setText("");
                     }
 
                 }
@@ -161,10 +168,15 @@ public class ParameterInputActivity extends AppCompatActivity {
 
                 @Override
                 public void onTextChanged(CharSequence s, int start, int before, int count) {
-                    final double speed = Double.parseDouble(etSpeedS.getEditText().getText().toString().trim());
+                    String speedS = etSpeedS.getEditText().getText().toString().trim();
+                    if (!speedS.isEmpty()){
+                        final double speed = Double.parseDouble(speedS);
+                        double convertSpeed = speed * 60;
+                        etSpeedM.setText(String.valueOf(convertSpeed));
+                    }else{
+                        etSpeedM.setText("");
+                    }
 
-                    convertSpeed = speed * 60;
-                    etSpeedM.setText(Double.toString(convertSpeed));
                 }
 
                 @Override
