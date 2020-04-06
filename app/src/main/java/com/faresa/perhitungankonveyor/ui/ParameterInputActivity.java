@@ -161,9 +161,15 @@ public class ParameterInputActivity extends AppCompatActivity {
 
                 @Override
                 public void onTextChanged(CharSequence s, int start, int before, int count) {
-                    final double speed = Double.parseDouble(etSpeedS.getEditText().getText().toString().trim());
-                    convertSpeed = speed * 60;
-                    etSpeedM.setText(Double.toString(convertSpeed));
+                    String speedS = etSpeedS.getEditText().getText().toString().trim();
+                    if (!speedS.isEmpty()){
+                        final double speed = Double.parseDouble(speedS);
+                        double convertSpeed = speed * 60;
+                        etSpeedM.setText(String.valueOf(convertSpeed));
+                    }else{
+                        etSpeedM.setText("");
+                    }
+
                 }
 
                 @Override
