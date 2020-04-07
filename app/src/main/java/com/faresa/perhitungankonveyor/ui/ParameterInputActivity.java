@@ -72,6 +72,7 @@ public class ParameterInputActivity extends AppCompatActivity {
         txtCapacity = findViewById(R.id.capa);
         boq = findViewById(R.id.boq);
         sheet = findViewById(R.id.datasheet);
+        reset = findViewById(R.id.btnReset);
 
         boq.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,6 +87,19 @@ public class ParameterInputActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(ParameterInputActivity.this,DataSheetActivity.class);
                 startActivity(intent);
+
+            }
+        });
+        reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                etCapacity.getEditText().getText().clear();
+                etSpeedS.getEditText().getText().clear();
+                etHoriLength.getEditText().getText().clear();
+                etLiftHeight.getEditText().getText().clear();
+                etDensity.getEditText().getText().clear();
+                etSurcharge.getEditText().getText().clear();
+
 
             }
         });
