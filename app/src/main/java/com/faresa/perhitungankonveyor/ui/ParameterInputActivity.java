@@ -82,26 +82,20 @@ public class ParameterInputActivity extends AppCompatActivity {
 
             }
         });
-        sheet.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ParameterInputActivity.this,DataSheetActivity.class);
-                startActivity(intent);
+        sheet.setOnClickListener(v -> {
+            Intent intent = new Intent(ParameterInputActivity.this,DataSheetActivity.class);
+            startActivity(intent);
 
-            }
         });
-        reset.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                etCapacity.getEditText().getText().clear();
-                etSpeedS.getEditText().getText().clear();
-                etHoriLength.getEditText().getText().clear();
-                etLiftHeight.getEditText().getText().clear();
-                etDensity.getEditText().getText().clear();
-                etSurcharge.getEditText().getText().clear();
+        reset.setOnClickListener(view -> {
+            etCapacity.getEditText().getText().clear();
+            etSpeedS.getEditText().getText().clear();
+            etHoriLength.getEditText().getText().clear();
+            etLiftHeight.getEditText().getText().clear();
+            etDensity.getEditText().getText().clear();
+            etSurcharge.getEditText().getText().clear();
 
 
-            }
         });
         try {
 
