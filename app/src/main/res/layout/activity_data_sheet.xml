@@ -41,6 +41,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/text"
                     android:layout_marginTop="8dp"
+                    android:layout_margin="8dp"
                     android:orientation="horizontal"
                     app:layout_constraintTop_toBottomOf="@+id/conveyed">
 
@@ -76,6 +77,7 @@
                     android:id="@+id/linearLayout2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
                     android:layout_marginTop="8dp"
                     android:background="@drawable/text"
                     android:orientation="horizontal"
@@ -113,6 +115,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
+                    android:layout_margin="8dp"
                     android:background="@drawable/text"
                     android:orientation="horizontal"
                     app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
@@ -148,6 +151,7 @@
                     android:id="@+id/linearLayout4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
                     android:layout_marginTop="8dp"
                     android:background="@drawable/text"
                     android:orientation="horizontal"
@@ -184,6 +188,7 @@
                     android:id="@+id/linearLayout5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
                     android:layout_marginTop="8dp"
                     android:background="@drawable/text"
                     android:orientation="horizontal"
@@ -219,6 +224,7 @@
                 <LinearLayout
                     android:id="@+id/linearLayout6"
                     android:layout_width="match_parent"
+                    android:layout_margin="8dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:background="@drawable/text"
@@ -256,6 +262,7 @@
                     android:id="@+id/linearLayout7"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
                     android:layout_marginTop="8dp"
                     android:background="@drawable/text"
                     android:orientation="horizontal"
@@ -291,6 +298,7 @@
                 <LinearLayout
                     android:id="@+id/linearLayout8"
                     android:layout_width="match_parent"
+                    android:layout_margin="8dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:background="@drawable/text"
@@ -329,6 +337,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
+                    android:layout_margin="8dp"
                     android:background="@drawable/text"
                     android:orientation="horizontal"
                     app:layout_constraintTop_toBottomOf="@+id/linearLayout8">
@@ -362,6 +371,7 @@
 
                 <LinearLayout
                     android:id="@+id/linearLayout10"
+                    android:layout_margin="8dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -392,12 +402,13 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="4dp"
                         android:layout_weight="1"
-                        android:text=""
+                        android:text="ton/hour"
                         android:textSize="16sp" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/linearLayout11"
+                    android:layout_margin="8dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -428,7 +439,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="4dp"
                         android:layout_weight="1"
-                        android:text="ton/hour"
+                        android:text="m/sec"
                         android:textSize="16sp" />
                 </LinearLayout>
 
@@ -438,6 +449,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/text"
                     android:orientation="horizontal"
+                    android:layout_margin="8dp"
                     app:layout_constraintTop_toBottomOf="@+id/linearLayout11">
 
                     <TextView
@@ -463,7 +475,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="4dp"
                         android:layout_weight="1"
-                        android:text="m/sec"
+                        android:text="m/min"
                         android:textSize="16sp" />
                 </LinearLayout>
 
@@ -473,6 +485,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:background="@drawable/text"
+                    android:layout_margin="8dp"
                     android:orientation="horizontal"
                     app:layout_constraintTop_toBottomOf="@+id/linearLayout12">
 
@@ -499,7 +512,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="4dp"
                         android:layout_weight="1"
-                        android:text="m/min"
+                        android:text="°"
                         android:textSize="16sp" />
                 </LinearLayout>
 
@@ -507,6 +520,7 @@
                     android:id="@+id/linearLayout14"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
                     android:background="@drawable/text"
                     android:orientation="horizontal"
                     app:layout_constraintTop_toBottomOf="@+id/linearLayout13">
@@ -534,7 +548,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="4dp"
                         android:layout_weight="1"
-                        android:text="°"
+                        android:text=""
                         android:textSize="16sp" />
                 </LinearLayout>
 
