@@ -50,7 +50,7 @@
                 android:text="Hitung" />
 
             <Button
-                android:id="@+id/Reset"
+                android:id="@+id/btnReset"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -164,7 +164,7 @@
                 android:layout_weight="2"
                 android:textColor="#ffff"
                 android:text="Cross Sectional Area  (A) :"
-                android:textSize="16sp"></TextView>
+                android:textSize="16sp"/>
 
             <TextView
                 android:id="@+id/Csa"
