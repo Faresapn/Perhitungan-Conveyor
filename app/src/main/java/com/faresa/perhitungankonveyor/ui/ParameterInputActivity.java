@@ -41,6 +41,8 @@ public class ParameterInputActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_parameter_input);
+
+        //spinner
         spinnerbeltwidth = findViewById(R.id.beltWidth);
         spinnerWorking = findViewById(R.id.spinner_working_data);
         spinnerPenggerak = findViewById(R.id.spinner_tipe_penggerak);
@@ -52,6 +54,8 @@ public class ParameterInputActivity extends AppCompatActivity {
         spinnerSurface = findViewById(R.id.spinner_surface);
         spinnerSagging = findViewById(R.id.spinner_sagging);
         spinnerAngle = findViewById(R.id.angle);
+
+
         decline = findViewById(R.id.decline);
         horizontal = findViewById(R.id.hori);
         incline = findViewById(R.id.incline);
@@ -62,6 +66,14 @@ public class ParameterInputActivity extends AppCompatActivity {
         tigalima = findViewById(R.id.tigalima);
         empatlima = findViewById(R.id.empatlima);
         spinnerLump = findViewById(R.id.LumpSize);
+
+        txtCapacity = findViewById(R.id.capa);
+        boq = findViewById(R.id.boq);
+        sheet = findViewById(R.id.datasheet);
+        reset = findViewById(R.id.btnReset);
+
+
+        //inputanfind
         etSpeedS = findViewById(R.id.etSpeedS);
         etSpeedM = findViewById(R.id.etSpeedM);
         etDensityKg = findViewById(R.id.etDensityKg);
@@ -69,11 +81,14 @@ public class ParameterInputActivity extends AppCompatActivity {
         etLiftHeight = findViewById(R.id.etLiftHeight);
         etHoriLength = findViewById(R.id.etHoriLength);
         etCapacity = findViewById(R.id.etCapacity);
-        txtCapacity = findViewById(R.id.capa);
-        boq = findViewById(R.id.boq);
-        sheet = findViewById(R.id.datasheet);
-        reset = findViewById(R.id.btnReset);
-
+        etWrapAngle = findViewById(R.id.etAngle);
+        etHeightHop = findViewById(R.id.etHeightHopper);
+        etWidthHop = findViewById(R.id.etWidthHopper);
+        etLengthSk = findViewById(R.id.etLengthSKirt);
+        etWidthSk = findViewById(R.id.etWidthSkirt);
+        etCarrier = findViewById(R.id.etCarierPitch);
+        etSlope = findViewById(R.id.etSlope);
+        etNpt = findViewById(R.id.etNP);
         boq.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
