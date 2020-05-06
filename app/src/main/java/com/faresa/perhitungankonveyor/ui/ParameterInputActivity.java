@@ -31,7 +31,7 @@ public class ParameterInputActivity extends AppCompatActivity {
     ImageView decline, horizontal, incline;
     ImageView dua, tiga, tigalima, empatlima;
     TextView etSpeedM, etDensityKg, txtCosa, txtCsa, txtcalcu, txtSlope, txtCapacity;
-    TextInputLayout etCapacity, etSpeedS, etWrapAngle, etHeightHop, etWidthHop, etLengthSk, etWidthSk, etHoriLength, etLiftHeight, etCarrier, etSlope, etDensity, etSurcharge, etNpt;
+    TextInputLayout etCapacity, etSpeedS, etWrapAngle, etHeightHop, etWidthHop, etLengthSk, etWidthSk, etHoriLength, etLiftHeight, etCarrier, etCoefSlope, etDensity, etSurcharge, etNpt, etReturnPitch;
     Button hitung,reset,boq,sheet;
     LinearLayout linearLayout;
     double convertSpeed, convertBerat, Qt, Convertslope;
@@ -87,8 +87,9 @@ public class ParameterInputActivity extends AppCompatActivity {
         etLengthSk = findViewById(R.id.etLengthSKirt);
         etWidthSk = findViewById(R.id.etWidthSkirt);
         etCarrier = findViewById(R.id.etCarierPitch);
-        etSlope = findViewById(R.id.etSlope);
+        etCoefSlope = findViewById(R.id.etSlope);
         etNpt = findViewById(R.id.etNP);
+        etReturnPitch = findViewById(R.id.etReturnPitch);
         boq.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -99,6 +100,19 @@ public class ParameterInputActivity extends AppCompatActivity {
         });
         sheet.setOnClickListener(v -> {
             Intent intent = new Intent(ParameterInputActivity.this,DataSheetActivity.class);
+//intent.putExtra("conveyorDistance", );
+            intent.putExtra("lift", Objects.requireNonNull(etLiftHeight.getEditText()).getText().toString());
+            intent.putExtra("slope", txtSlope.getText().toString());
+            intent.putExtra("carrier", Objects.requireNonNull(etCarrier.getEditText()).getText().toString());
+            intent.putExtra("return", Objects.requireNonNull(etReturnPitch.getEditText()).getText().toString());
+//            intent.putExtra("through");
+            intent.putExtra("coefSlope", Objects.requireNonNull(etCoefSlope.getEditText()).getText().toString());
+            intent.putExtra("typeDrive", spinnerTypeConveyor.getSelectedItem().toString());
+            intent.putExtra("direction", spinnerWorking.getSelectedItem().toString());
+            intent.putExtra("designCapacity", Objects.requireNonNull(etCapacity.getEditText()).getText().toString());
+            intent.putExtra("speedSec", Objects.requireNonNull(etSpeedS.getEditText()).getText().toString());
+            intent.putExtra("speedMin", etSpeedM.getText().toString());
+//            intent.putExtra("driveWrapAngle",);
             startActivity(intent);
 
         });

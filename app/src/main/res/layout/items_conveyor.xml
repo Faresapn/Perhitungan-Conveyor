@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    app:cardCornerRadius="20dp"
-    android:layout_margin="12dp"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_margin="12dp"
+    app:cardCornerRadius="20dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -79,16 +78,16 @@
                     android:textSize="16sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
-              <TextView
-            android:layout_width="match_parent"
-                  android:textColor="#fff"
-            android:layout_height="wrap_content"
-app:layout_constraintTop_toBottomOf="@+id/etLiftHeight"
-                  android:layout_margin="16dp"
-                  android:text="Slope Angle"
-            android:id="@+id/etSlopeAngle">
+            <TextView
+                android:id="@+id/etSlopeAngle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Slope Angle"
+                android:textColor="#fff"
+                app:layout_constraintTop_toBottomOf="@+id/etLiftHeight">
 
-        </TextView>
+            </TextView>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/etCarierPitch"
@@ -194,8 +193,8 @@ app:layout_constraintTop_toBottomOf="@+id/etLiftHeight"
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="10dp"
             android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp"
             android:background="#0f4c75">
 
 
@@ -224,40 +223,43 @@ app:layout_constraintTop_toBottomOf="@+id/etLiftHeight"
                 android:id="@+id/duapuluh"
                 android:layout_width="150dp"
                 android:layout_height="0dp"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintDimensionRatio="H,2:1"
-                android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView7"
                 app:srcCompat="@drawable/duapuluh" />
+
             <ImageView
                 android:id="@+id/tigapuluh"
                 android:layout_width="150dp"
                 android:layout_height="0dp"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintDimensionRatio="H,2:1"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:visibility="gone"
                 app:layout_constraintTop_toBottomOf="@+id/textView7"
                 app:srcCompat="@drawable/galuh" />
+
             <ImageView
                 android:id="@+id/tigalima"
                 android:layout_width="150dp"
                 android:layout_height="0dp"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintDimensionRatio="H,2:1"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:visibility="gone"
                 app:layout_constraintTop_toBottomOf="@+id/textView7"
                 app:srcCompat="@drawable/galima" />
+
             <ImageView
                 android:id="@+id/empatlima"
                 android:layout_width="150dp"
                 android:layout_height="0dp"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintDimensionRatio="H,2:1"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:visibility="gone"
                 app:layout_constraintTop_toBottomOf="@+id/textView7"
                 app:srcCompat="@drawable/patlima" />
         </androidx.constraintlayout.widget.ConstraintLayout>
