@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.button2)
     public void onViewClicked() {
-        Intent intent5 = new Intent(MainActivity.this, MaterialActivity.class);
+        Intent intent5 = new Intent(MainActivity.this, ScrewActivity.class);
         startActivity(intent5);
     }
 
