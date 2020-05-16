@@ -50,6 +50,12 @@ public class ScrewActivity extends AppCompatActivity implements MaterialAdapter.
         etComponent = findViewById(R.id.materialComponent);
         etSeries = findViewById(R.id.materialSeries);
 
+        etMaterial.setEnabled(false);
+        etWeight.setEnabled(false);
+        etMaterialfac.setEnabled(false);
+        etComponent.setEnabled(false);
+        etSeries.setEnabled(false);
+
         try {
             Objects.requireNonNull(etMaterial.getEditText()).setText(data.getMaterial());
             Objects.requireNonNull(etWeight.getEditText()).setText(data.getWeight());
