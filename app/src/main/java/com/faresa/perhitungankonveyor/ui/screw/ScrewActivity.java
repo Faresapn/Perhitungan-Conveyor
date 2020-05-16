@@ -7,14 +7,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 
 import com.faresa.perhitungankonveyor.R;
 import com.faresa.perhitungankonveyor.model.DataMaterial;
+import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class ScrewActivity extends AppCompatActivity implements MaterialAdapter.OnItemClickListener{
     String dataMaterial= "";
@@ -23,6 +26,7 @@ public class ScrewActivity extends AppCompatActivity implements MaterialAdapter.
     String dataComponent = "";
     String dataSeries = "";
 
+    DataMaterial data;
     private String[] materialData;
     private String[] weightData;
     private String[] materialfacData;
@@ -32,13 +36,29 @@ public class ScrewActivity extends AppCompatActivity implements MaterialAdapter.
     RecyclerView recyclerView;
     MaterialAdapter adapter;
     private ArrayList<DataMaterial> list;
-
+    TextInputLayout etMaterial,etWeight,etMaterialfac,etComponent,etSeries;
     Button btnMaterial;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_screw);
+        data = getIntent().getParcelableExtra("MATERIAL_DATA");
+        etMaterial = findViewById(R.id.materialName);
+        etWeight = findViewById(R.id.materialWeight);
+        etMaterialfac = findViewById(R.id.materialFactor);
+        etComponent = findViewById(R.id.materialComponent);
+        etSeries = findViewById(R.id.materialSeries);
+
+        try {
+            Objects.requireNonNull(etMaterial.getEditText()).setText(data.getMaterial());
+            Objects.requireNonNull(etWeight.getEditText()).setText(data.getWeight());
+            Objects.requireNonNull(etMaterialfac.getEditText()).setText(data.getMaterialfac());
+            Objects.requireNonNull(etComponent.getEditText()).setText(data.getComponent());
+            Objects.requireNonNull(etSeries.getEditText()).setText(data.getSeries());
+        }catch (Exception e){
+            Log.d("catac", "catch");
+        }
         btnMaterial = findViewById(R.id.btnMaterial);
         btnMaterial.setOnClickListener(view -> {
             final Dialog dialog = new Dialog(ScrewActivity.this);
@@ -82,7 +102,7 @@ public class ScrewActivity extends AppCompatActivity implements MaterialAdapter.
         data.setComponent(componentData[position]);
         data.setSeries(seriesData[position]);
         Intent intent = new Intent(getApplication(), ScrewActivity.class);
-        intent.putExtra("DETAIL_DATA", data);
+        intent.putExtra("MATERIAL_DATA", data);
         startActivity(intent);
         finish();
     }

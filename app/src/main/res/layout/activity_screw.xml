@@ -7,7 +7,9 @@
     tools:context=".ui.screw.ScrewActivity">
 
     <androidx.cardview.widget.CardView
+        android:layout_margin="8dp"
         android:layout_width="match_parent"
+        app:cardCornerRadius="4dp"
         android:layout_height="wrap_content">
 
         <LinearLayout
