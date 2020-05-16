@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ScrewActivity"></activity>
+        <activity android:name=".ui.screw.MaterialActivity"></activity>
+        <activity android:name=".ui.screw.ScrewActivity" />
         <activity android:name=".ui.BoqActivity" />
         <activity android:name=".ui.DataSheetActivity" />
         <activity android:name=".ui.ParameterInputActivity" />

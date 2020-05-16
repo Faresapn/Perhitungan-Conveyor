@@ -6,9 +6,9 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.faresa.perhitungankonveyor.ui.BoqActivity;
-import com.faresa.perhitungankonveyor.ui.DataSheetActivity;
 import com.faresa.perhitungankonveyor.ui.ParameterInputActivity;
+import com.faresa.perhitungankonveyor.ui.screw.MaterialActivity;
+import com.faresa.perhitungankonveyor.ui.screw.ScrewActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.button2)
     public void onViewClicked() {
-        Intent intent5 = new Intent(MainActivity.this, ScrewActivity.class);
+        Intent intent5 = new Intent(MainActivity.this, MaterialActivity.class);
         startActivity(intent5);
     }
 

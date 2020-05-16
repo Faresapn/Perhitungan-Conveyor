@@ -111,4 +111,80 @@
         <item>400 mm</item>
         <item>500 mm</item>
     </string-array>
+
+    <string-array name="array_material">
+        <item>Black Ground</item>
+        <item>Coal dry</item>
+        <item>cemennt, clinker</item>
+        <item>Cement, portland</item>
+        <item>cement. Aerated</item>
+        <item>coal, anthacite</item>
+        <item>coal, bitumious, slack</item>
+        <item>dolomite, crushed</item>
+        <item>dolomite, lumpy</item>
+        <item>fly ash</item>
+        <item>gypsum, raw</item>
+        <item>limestone, crushed</item>
+        <item>limsestone, dust</item>
+    </string-array>
+    <string-array name="array_weight">
+        <item>105</item>
+        <item>35</item>
+        <item>75</item>
+        <item>94</item>
+        <item>60</item>
+        <item>49</item>
+        <item>40</item>
+        <item>80</item>
+        <item>90</item>
+        <item>35</item>
+        <item>75</item>
+        <item>85</item>
+        <item>60</item>
+    </string-array>
+    <string-array name="array_materialfac">
+        <item>2</item>
+        <item>3</item>
+        <item>1.8</item>
+        <item>1.4</item>
+        <item>1.4</item>
+        <item>1</item>
+        <item>0.9</item>
+        <item>0.9</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>1.8</item>
+    </string-array>
+    <string-array name="array_component">
+        <item>10</item>
+        <item>30</item>
+        <item>30</item>
+        <item>20</item>
+        <item>30</item>
+        <item>20</item>
+        <item>10</item>
+        <item>20</item>
+        <item>20</item>
+        <item>30</item>
+        <item>20</item>
+        <item>20</item>
+        <item>20</item>
+    </string-array>
+    <string-array name="array_series">
+        <item>B</item>
+        <item>D</item>
+        <item>D</item>
+        <item>D</item>
+        <item>D</item>
+        <item>B</item>
+        <item>A</item>
+        <item>D</item>
+        <item>D</item>
+        <item>D</item>
+        <item>D</item>
+        <item>D</item>
+        <item>D</item>
+    </string-array>
 </resources>
