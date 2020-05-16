@@ -17,7 +17,7 @@ import com.faresa.perhitungankonveyor.model.DataMaterial;
 import java.util.ArrayList;
 
 public class ScrewActivity extends AppCompatActivity implements MaterialAdapter.OnItemClickListener{
-    String dataMaterial;
+    String dataMaterial= "";
     String dataWeight = "";
     String dataMaterialFactor = "";
     String dataComponent = "";

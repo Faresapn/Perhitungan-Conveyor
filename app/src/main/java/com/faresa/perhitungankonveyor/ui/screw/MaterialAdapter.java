@@ -12,8 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.faresa.perhitungankonveyor.R;
 import com.faresa.perhitungankonveyor.model.DataMaterial;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 
 public class MaterialAdapter extends RecyclerView.Adapter<MaterialAdapter.ViewHolder>{
@@ -52,9 +50,9 @@ public class MaterialAdapter extends RecyclerView.Adapter<MaterialAdapter.ViewHo
         return list.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    class ViewHolder extends RecyclerView.ViewHolder {
         TextView material;
-        public ViewHolder(@NonNull View itemView) {
+        ViewHolder(@NonNull View itemView) {
             super(itemView);
             material = itemView.findViewById(R.id.txtMaterial);
 
