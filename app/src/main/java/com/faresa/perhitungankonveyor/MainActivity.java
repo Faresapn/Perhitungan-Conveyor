@@ -6,9 +6,9 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.faresa.perhitungankonveyor.ui.BoqActivity;
-import com.faresa.perhitungankonveyor.ui.DataSheetActivity;
 import com.faresa.perhitungankonveyor.ui.ParameterInputActivity;
+import com.faresa.perhitungankonveyor.ui.screw.MaterialActivity;
+import com.faresa.perhitungankonveyor.ui.screw.ScrewActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
