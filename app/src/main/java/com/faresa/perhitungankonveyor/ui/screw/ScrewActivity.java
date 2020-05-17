@@ -1,6 +1,7 @@
 package com.faresa.perhitungankonveyor.ui.screw;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -38,6 +39,7 @@ public class ScrewActivity extends AppCompatActivity implements MaterialAdapter.
     private ArrayList<DataMaterial> list;
     TextInputLayout etMaterial,etWeight,etMaterialfac,etComponent,etSeries;
     Button btnMaterial;
+    CardView cardInput;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,12 +51,14 @@ public class ScrewActivity extends AppCompatActivity implements MaterialAdapter.
         etMaterialfac = findViewById(R.id.materialFactor);
         etComponent = findViewById(R.id.materialComponent);
         etSeries = findViewById(R.id.materialSeries);
+        cardInput = findViewById(R.id.cardInput);
 
-        etMaterial.setEnabled(false);
-        etWeight.setEnabled(false);
-        etMaterialfac.setEnabled(false);
-        etComponent.setEnabled(false);
-        etSeries.setEnabled(false);
+
+        etMaterial.getEditText().setFocusable(false);
+        etWeight.getEditText().setFocusable(false);
+        etMaterialfac.getEditText().setFocusable(false);
+        etComponent.getEditText().setFocusable(false);
+        etSeries.getEditText().setFocusable(false);
 
         try {
             Objects.requireNonNull(etMaterial.getEditText()).setText(data.getMaterial());
@@ -64,6 +68,14 @@ public class ScrewActivity extends AppCompatActivity implements MaterialAdapter.
             Objects.requireNonNull(etSeries.getEditText()).setText(data.getSeries());
         }catch (Exception e){
             Log.d("catac", "catch");
+        }
+        String mater = etMaterial.getEditText().getText().toString();
+
+        Log.d("mater", mater);
+        if (mater.equals("")){
+            cardInput.setVisibility(View.GONE);
+        }else {
+            cardInput.setVisibility(View.VISIBLE);
         }
         btnMaterial = findViewById(R.id.btnMaterial);
         btnMaterial.setOnClickListener(view -> {
