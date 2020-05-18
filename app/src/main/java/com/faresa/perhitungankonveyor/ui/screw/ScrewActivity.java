@@ -176,7 +176,27 @@ public class ScrewActivity extends AppCompatActivity implements MaterialAdapter.
                 double normal = ((kapasitas * 1000) / 2.2) / weight;
                 etNormal.getEditText().setText(Double.toString(normal));
 
+                String getNormal = etNormal.getEditText().getText().toString();
+                double normalD = Double.parseDouble(getNormal);
+                double hasilEq = Cfo*normalD;
+                etEquivalent.getEditText().setText(Double.toString(hasilEq));
 
+                String getC1D = etC1.getEditText().getText().toString();
+                double C1d = Double.parseDouble(getC1D);
+                double hasilSpeed = (normalD*Cfo)/C1d;
+                etSpeed.getEditText().setText(Double.toString(hasilSpeed));
+
+                String getPanjang = etPanjang.getEditText().getText().toString();
+                double panjang = Double.parseDouble(getPanjang);
+                double hasilLo = panjang/0.3048;
+                etLo.getEditText().setText(Double.toString(hasilLo));
+
+                String getScrew1 = etScrew1.getEditText().getText().toString();
+                String getScrew2 = etScrew2.getEditText().getText().toString();
+                double screw1 = Double.parseDouble(getScrew1);
+                double screw2 = Double.parseDouble(getScrew2);
+                double hasilL = screw1*screw2;
+                etL.getEditText().setText(Double.toString(hasilL));
             }catch (Exception e){
                 Toast.makeText(this, "Mohon isi semua data", Toast.LENGTH_LONG).show();
             }
