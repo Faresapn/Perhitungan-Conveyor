@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.faresa.perhitungankonveyor.R;
 import com.faresa.perhitungankonveyor.model.DataMaterial;
@@ -22,8 +23,8 @@ import com.google.android.material.textfield.TextInputLayout;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class ScrewActivity extends AppCompatActivity implements MaterialAdapter.OnItemClickListener{
-    String dataMaterial= "";
+public class ScrewActivity extends AppCompatActivity implements MaterialAdapter.OnItemClickListener {
+    String dataMaterial = "";
     String dataWeight = "";
     String dataMaterialFactor = "";
     String dataComponent = "";
@@ -47,8 +48,9 @@ public class ScrewActivity extends AppCompatActivity implements MaterialAdapter.
     RecyclerView recyclerView;
     MaterialAdapter adapter;
     private ArrayList<DataMaterial> list;
-    TextInputLayout etMaterial,etWeight,etMaterialfac,etComponent,etSeries, etC1, etFb,etFd, etNormal,etEquivalent, etSpeed, etLo,etL ;
-    Button btnMaterial;
+    TextInputLayout etKapasitas, etPanjang, etScrew1, etScrew2;
+    TextInputLayout etMaterial, etWeight, etMaterialfac, etComponent, etSeries, etC1, etFb, etFd, etNormal, etEquivalent, etSpeed, etLo, etL;
+    Button btnMaterial, btnHasil, btnReset;
     CardView cardInput, cardHasil;
     LinearLayout linearHitung;
 
@@ -69,6 +71,14 @@ public class ScrewActivity extends AppCompatActivity implements MaterialAdapter.
         etFd = findViewById(R.id.materialFd);
         linearHitung = findViewById(R.id.linearHitung);
         cardHasil = findViewById(R.id.cardHasil);
+        btnHasil = findViewById(R.id.btnHitung);
+        btnReset = findViewById(R.id.btnReset);
+
+        etKapasitas = findViewById(R.id.screwKapasitas);
+        etPanjang = findViewById(R.id.screwPanjang);
+        etScrew1 = findViewById(R.id.screwJumlah);
+        etScrew2 = findViewById(R.id.screwJumlah2);
+
 
         etNormal = findViewById(R.id.hasilNormal);
         etEquivalent = findViewById(R.id.hasilEquivalent);
@@ -97,7 +107,7 @@ public class ScrewActivity extends AppCompatActivity implements MaterialAdapter.
             Objects.requireNonNull(etMaterialfac.getEditText()).setText(data.getMaterialfac());
             Objects.requireNonNull(etComponent.getEditText()).setText(data.getComponent());
             Objects.requireNonNull(etSeries.getEditText()).setText(data.getSeries());
-        }catch (Exception e){
+        } catch (Exception e) {
             Log.d("catac", "catch");
         }
         String mater = etMaterial.getEditText().getText().toString();
@@ -105,16 +115,16 @@ public class ScrewActivity extends AppCompatActivity implements MaterialAdapter.
         String getFd = etComponent.getEditText().getText().toString();
         String getFb = etSeries.getEditText().getText().toString();
         Log.d("mater", mater);
-        if (mater.equals("")){
+        if (mater.equals("")) {
             cardInput.setVisibility(View.GONE);
             linearHitung.setVisibility(View.GONE);
             cardHasil.setVisibility(View.GONE);
-        }else {
+        } else {
             cardInput.setVisibility(View.VISIBLE);
             linearHitung.setVisibility(View.VISIBLE);
             cardHasil.setVisibility(View.VISIBLE);
         }
-        if (!getC1.equals("")){
+        if (!getC1.equals("")) {
             switch (getC1) {
                 case "10":
                     etC1.getEditText().setText("7");
@@ -127,7 +137,7 @@ public class ScrewActivity extends AppCompatActivity implements MaterialAdapter.
                     break;
             }
         }
-        if (!getFd.equals("")){
+        if (!getFd.equals("")) {
             switch (getFd) {
                 case "10":
                     etFd.getEditText().setText("140");
@@ -140,7 +150,7 @@ public class ScrewActivity extends AppCompatActivity implements MaterialAdapter.
                     break;
             }
         }
-        if (!getFb.equals("")){
+        if (!getFb.equals("")) {
             switch (getFb) {
                 case "A":
                     etFb.getEditText().setText("1");
@@ -156,6 +166,24 @@ public class ScrewActivity extends AppCompatActivity implements MaterialAdapter.
                     break;
             }
         }
+
+        btnHasil.setOnClickListener(view -> {
+            try {
+                String getKapasitas = etKapasitas.getEditText().getText().toString();
+                String getWeight = etWeight.getEditText().getText().toString();
+                double kapasitas = Double.parseDouble(getKapasitas);
+                double weight = Double.parseDouble(getWeight);
+                double normal = ((kapasitas * 1000) / 2.2) / weight;
+                etNormal.getEditText().setText(Double.toString(normal));
+
+
+            }catch (Exception e){
+                Toast.makeText(this, "Mohon isi semua data", Toast.LENGTH_LONG).show();
+            }
+
+        });
+
+
         btnMaterial = findViewById(R.id.btnMaterial);
         btnMaterial.setOnClickListener(view -> {
             final Dialog dialog = new Dialog(ScrewActivity.this);
@@ -170,6 +198,7 @@ public class ScrewActivity extends AppCompatActivity implements MaterialAdapter.
             dialog.show();
         });
     }
+
     private void prepare() {
         materialData = getResources().getStringArray(R.array.array_material);
         weightData = getResources().getStringArray(R.array.array_weight);
@@ -191,6 +220,7 @@ public class ScrewActivity extends AppCompatActivity implements MaterialAdapter.
         adapter.setOnItemClickListener(ScrewActivity.this);
         recyclerView.setAdapter(adapter);
     }
+
     public void onItemClick(int position) {
         DataMaterial data = new DataMaterial();
         data.setMaterial(materialData[position]);
