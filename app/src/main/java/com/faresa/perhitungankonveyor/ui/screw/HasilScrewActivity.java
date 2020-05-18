@@ -55,5 +55,16 @@ public class HasilScrewActivity extends AppCompatActivity {
         Objects.requireNonNull(inclineHp2.getEditText()).setText(incHp2);
 
 
+        horiHpf.getEditText().setFocusable(false);
+        horiHpm.getEditText().setFocusable(false);
+        horiHp.getEditText().setFocusable(false);
+        horiHp2.getEditText().setFocusable(false);
+        horiTorque.getEditText().setFocusable(false);
+        horiTorque2.getEditText().setFocusable(false);
+
+        inclineAngle.getEditText().setFocusable(false);
+        inclineHph.getEditText().setFocusable(false);
+        inclineHp.getEditText().setFocusable(false);
+        inclineHp2.getEditText().setFocusable(false);
     }
 }
