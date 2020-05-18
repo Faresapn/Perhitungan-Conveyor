@@ -253,5 +253,27 @@ public class ScrewActivity extends AppCompatActivity implements MaterialAdapter.
         startActivity(intent);
         finish();
     }
+    private boolean validateNormal() {
+        String email = (etNormal.getEditText()).getText().toString().trim();
 
+        if (email.isEmpty()) {
+            etNormal.setError("Email tidak boleh kosong");
+            return false;
+        }  else {
+            etNormal.setError(null);
+            return true;
+        }
+    }
+
+    private boolean validateScrew() {
+        String pw = etL.getEditText().getText().toString().trim();
+
+        if (pw.isEmpty()) {
+            etL.setError("Password tidak boleh kosong");
+            return false;
+        } else {
+            etL.setError(null);
+            return true;
+        }
+    }
 }
