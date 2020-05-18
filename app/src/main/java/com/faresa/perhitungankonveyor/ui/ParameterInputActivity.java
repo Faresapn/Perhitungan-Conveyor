@@ -394,7 +394,7 @@ public class ParameterInputActivity extends AppCompatActivity {
                         txtCosa.setText("0.18");
                     } else {
                         Log.d("else", "else");
-                        Toast.makeText(this, "Data surcharge tidak valid \n masukan 10/20/30", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "Data surcharge tidak valid \n masukan 10/20/30", Toast.LENGTH_LONG).show();
                         txtCosa.setText("");
                     }
 

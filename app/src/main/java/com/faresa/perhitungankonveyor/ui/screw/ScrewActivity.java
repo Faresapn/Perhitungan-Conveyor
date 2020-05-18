@@ -37,6 +37,7 @@ public class ScrewActivity extends AppCompatActivity implements MaterialAdapter.
     double n1 = 0.94;
     double n2 = 0.94;
     double Fo = 1;
+    double angle = 15;
 
     DataMaterial data;
     private String[] materialData;
@@ -226,12 +227,45 @@ public class ScrewActivity extends AppCompatActivity implements MaterialAdapter.
                 double doubleL = Double.parseDouble(getL);
                 double doubleFb = Double.parseDouble(getFb1);
                 double hasilHPF = (doubleL*doubleSpeed*doubleFd*doubleFb)/1000000;
-                Log.d("hasl", String.valueOf(hasilHPF));
+                Log.d("hpf", String.valueOf(hasilHPF));
+
+                String getEq = etEquivalent.getEditText().getText().toString();
+                String getW = etWeight.getEditText().getText().toString();
+                double doubleEq = Double.parseDouble(getEq);
+                double doubleW = Double.parseDouble(getW);
+                double hasilHPM = (doubleEq*doubleL*doubleW*Ff*Fm*Fp)/1000000;
+                Log.d("hpm", String.valueOf(hasilHPM));
+
+                double hasilHP = ((hasilHPF+hasilHPM)*Fo)/(n1*n2);
+                Log.d("hp", String.valueOf(hasilHP));
+                double hasilHP2 = hasilHP/1.341;
+                Log.d("hp2", String.valueOf(hasilHP2));
+
+                double hasilTorque = (63025*hasilHP)/doubleSpeed;
+                Log.d("ht", String.valueOf(hasilTorque));
+                double hasilTorque2 = (716.2*hasilHP)/doubleSpeed;
+                Log.d("ht2", String.valueOf(hasilTorque2));
+                //=============
+                double inclineHpH = (doubleEq*doubleW*angle)/(33000*60);
+                Log.d("hph", String.valueOf(inclineHpH));
+                double inclineHP = ((hasilHPF+hasilHPM+inclineHpH)*Fo)/(n1*n2);
+                Log.d("hp", String.valueOf(inclineHP));
+                double inclineHP2 = inclineHP/1.341;
+                Log.d("hp2", String.valueOf(inclineHP2));
 
 
-
-//                Intent intent = new Intent(ScrewActivity.this, HasilScrewActivity.class);
-//                startActivity(intent);
+                Intent intent = new Intent(ScrewActivity.this, HasilScrewActivity.class);
+                intent.putExtra("hpf", String.valueOf(hasilHPF));
+                intent.putExtra("hpm", String.valueOf(hasilHPM));
+                intent.putExtra("hp", String.valueOf(hasilHP));
+                intent.putExtra("hp2", String.valueOf(hasilHP2));
+                intent.putExtra("torque", String.valueOf(hasilTorque));
+                intent.putExtra("torque2", String.valueOf(hasilTorque2));
+                intent.putExtra("angle", String.valueOf(angle));
+                intent.putExtra("hph", String.valueOf(inclineHpH));
+                intent.putExtra("inc_hp", String.valueOf(inclineHP));
+                intent.putExtra("inc_hp2", String.valueOf(inclineHP2));
+                startActivity(intent);
             }
         });
 
