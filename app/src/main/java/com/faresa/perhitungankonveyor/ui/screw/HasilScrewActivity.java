@@ -42,6 +42,18 @@ public class HasilScrewActivity extends AppCompatActivity {
         incHp = getIntent().getStringExtra("inc_hp");
         incHp2 = getIntent().getStringExtra("inc_hp2");
 
+        Objects.requireNonNull(horiHpf.getEditText()).setText(hpf);
+        Objects.requireNonNull(horiHpm.getEditText()).setText(hpm);
+        Objects.requireNonNull(horiHp.getEditText()).setText(hp);
+        Objects.requireNonNull(horiHp2.getEditText()).setText(hp2);
+        Objects.requireNonNull(horiTorque.getEditText()).setText(torque);
+        Objects.requireNonNull(horiTorque2.getEditText()).setText(torque2);
+
+        Objects.requireNonNull(inclineAngle.getEditText()).setText(angle);
+        Objects.requireNonNull(inclineHph.getEditText()).setText(hph);
+        Objects.requireNonNull(inclineHp.getEditText()).setText(incHp);
+        Objects.requireNonNull(inclineHp2.getEditText()).setText(incHp2);
+
 
     }
 }
