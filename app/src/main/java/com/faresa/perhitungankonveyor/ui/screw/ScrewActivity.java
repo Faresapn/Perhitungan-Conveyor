@@ -47,9 +47,9 @@ public class ScrewActivity extends AppCompatActivity implements MaterialAdapter.
     RecyclerView recyclerView;
     MaterialAdapter adapter;
     private ArrayList<DataMaterial> list;
-    TextInputLayout etMaterial,etWeight,etMaterialfac,etComponent,etSeries, etC1, etFb,etFd;
+    TextInputLayout etMaterial,etWeight,etMaterialfac,etComponent,etSeries, etC1, etFb,etFd, etNormal,etEquivalent, etSpeed, etLo,etL ;
     Button btnMaterial;
-    CardView cardInput;
+    CardView cardInput, cardHasil;
     LinearLayout linearHitung;
 
     @SuppressLint("SetTextI18n")
@@ -68,6 +68,13 @@ public class ScrewActivity extends AppCompatActivity implements MaterialAdapter.
         etFb = findViewById(R.id.materialFb);
         etFd = findViewById(R.id.materialFd);
         linearHitung = findViewById(R.id.linearHitung);
+        cardHasil = findViewById(R.id.cardHasil);
+
+        etNormal = findViewById(R.id.hasilNormal);
+        etEquivalent = findViewById(R.id.hasilEquivalent);
+        etSpeed = findViewById(R.id.hasilSpeed);
+        etLo = findViewById(R.id.hasilLo);
+        etL = findViewById(R.id.hasilL);
 
         etMaterial.getEditText().setFocusable(false);
         etWeight.getEditText().setFocusable(false);
@@ -77,6 +84,12 @@ public class ScrewActivity extends AppCompatActivity implements MaterialAdapter.
         etC1.getEditText().setFocusable(false);
         etFb.getEditText().setFocusable(false);
         etFd.getEditText().setFocusable(false);
+
+        etNormal.getEditText().setFocusable(false);
+        etEquivalent.getEditText().setFocusable(false);
+        etSpeed.getEditText().setFocusable(false);
+        etLo.getEditText().setFocusable(false);
+        etL.getEditText().setFocusable(false);
 
         try {
             Objects.requireNonNull(etMaterial.getEditText()).setText(data.getMaterial());
@@ -95,9 +108,11 @@ public class ScrewActivity extends AppCompatActivity implements MaterialAdapter.
         if (mater.equals("")){
             cardInput.setVisibility(View.GONE);
             linearHitung.setVisibility(View.GONE);
+            cardHasil.setVisibility(View.GONE);
         }else {
             cardInput.setVisibility(View.VISIBLE);
             linearHitung.setVisibility(View.VISIBLE);
+            cardHasil.setVisibility(View.VISIBLE);
         }
         if (!getC1.equals("")){
             switch (getC1) {
