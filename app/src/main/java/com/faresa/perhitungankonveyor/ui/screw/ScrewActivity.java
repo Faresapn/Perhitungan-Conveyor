@@ -50,7 +50,7 @@ public class ScrewActivity extends AppCompatActivity implements MaterialAdapter.
     private ArrayList<DataMaterial> list;
     TextInputLayout etKapasitas, etPanjang, etScrew1, etScrew2;
     TextInputLayout etMaterial, etWeight, etMaterialfac, etComponent, etSeries, etC1, etFb, etFd, etNormal, etEquivalent, etSpeed, etLo, etL;
-    Button btnMaterial, btnHasil, btnReset;
+    Button btnMaterial, btnHasil, btnReset, btnDone;
     CardView cardInput, cardHasil;
     LinearLayout linearHitung;
 
@@ -73,6 +73,7 @@ public class ScrewActivity extends AppCompatActivity implements MaterialAdapter.
         cardHasil = findViewById(R.id.cardHasil);
         btnHasil = findViewById(R.id.btnHitung);
         btnReset = findViewById(R.id.btnReset);
+        btnDone = findViewById(R.id.btnDone);
 
         etKapasitas = findViewById(R.id.screwKapasitas);
         etPanjang = findViewById(R.id.screwPanjang);
@@ -166,7 +167,19 @@ public class ScrewActivity extends AppCompatActivity implements MaterialAdapter.
                     break;
             }
         }
-
+        btnMaterial = findViewById(R.id.btnMaterial);
+        btnMaterial.setOnClickListener(view -> {
+            final Dialog dialog = new Dialog(ScrewActivity.this);
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+            dialog.setContentView(R.layout.activity_material);
+            recyclerView = dialog.findViewById(R.id.rv);
+            adapter = new MaterialAdapter(getApplicationContext(), list);
+            recyclerView.setLayoutManager(new LinearLayoutManager(getApplication()));
+            recyclerView.setAdapter(adapter);
+            prepare();
+            addItem();
+            dialog.show();
+        });
         btnHasil.setOnClickListener(view -> {
             try {
                 String getKapasitas = etKapasitas.getEditText().getText().toString();
@@ -202,21 +215,14 @@ public class ScrewActivity extends AppCompatActivity implements MaterialAdapter.
             }
 
         });
-
-
-        btnMaterial = findViewById(R.id.btnMaterial);
-        btnMaterial.setOnClickListener(view -> {
-            final Dialog dialog = new Dialog(ScrewActivity.this);
-            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-            dialog.setContentView(R.layout.activity_material);
-            recyclerView = dialog.findViewById(R.id.rv);
-            adapter = new MaterialAdapter(getApplicationContext(), list);
-            recyclerView.setLayoutManager(new LinearLayoutManager(getApplication()));
-            recyclerView.setAdapter(adapter);
-            prepare();
-            addItem();
-            dialog.show();
+        btnDone.setOnClickListener(view -> {
+            if (validateNormal() | validateScrew()){
+                Intent intent = new Intent(ScrewActivity.this, HasilScrewActivity.class);
+                startActivity(intent);
+            }
         });
+
+
     }
 
     private void prepare() {
@@ -257,7 +263,7 @@ public class ScrewActivity extends AppCompatActivity implements MaterialAdapter.
         String email = (etNormal.getEditText()).getText().toString().trim();
 
         if (email.isEmpty()) {
-            etNormal.setError("Email tidak boleh kosong");
+            etNormal.setError("Tidak boleh kosong");
             return false;
         }  else {
             etNormal.setError(null);
@@ -269,7 +275,7 @@ public class ScrewActivity extends AppCompatActivity implements MaterialAdapter.
         String pw = etL.getEditText().getText().toString().trim();
 
         if (pw.isEmpty()) {
-            etL.setError("Password tidak boleh kosong");
+            etL.setError("Tidak boleh kosong");
             return false;
         } else {
             etL.setError(null);
