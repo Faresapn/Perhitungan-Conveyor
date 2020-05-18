@@ -24,11 +24,6 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class ScrewActivity extends AppCompatActivity implements MaterialAdapter.OnItemClickListener {
-    String dataMaterial = "";
-    String dataWeight = "";
-    String dataMaterialFactor = "";
-    String dataComponent = "";
-    String dataSeries = "";
 
     double Cfo = 1.1;
     double Fm = 1.4;
@@ -168,6 +163,11 @@ public class ScrewActivity extends AppCompatActivity implements MaterialAdapter.
                     break;
             }
         }
+        btnReset.setOnClickListener(view -> {
+            Intent intent = new Intent(ScrewActivity.this, ScrewActivity.class);
+            startActivity(intent);
+            finish();
+        });
         btnMaterial = findViewById(R.id.btnMaterial);
         btnMaterial.setOnClickListener(view -> {
             final Dialog dialog = new Dialog(ScrewActivity.this);
