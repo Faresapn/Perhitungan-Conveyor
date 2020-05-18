@@ -5,14 +5,31 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.faresa.perhitungankonveyor.R;
+import com.google.android.material.textfield.TextInputLayout;
+
+import java.util.Objects;
 
 public class HasilScrewActivity extends AppCompatActivity {
     String hpf, hpm, hp, hp2, torque, torque2, angle, hph, incHp, incHp2;
+    TextInputLayout horiHpf, horiHpm, horiHp, horiHp2, horiTorque, horiTorque2;
+    TextInputLayout inclineAngle, inclineHph, inclineHp, inclineHp2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hasil_screw);
+
+        horiHpf = findViewById(R.id.hasilHpf);
+        horiHpm = findViewById(R.id.hasilHpm);
+        horiHp = findViewById(R.id.hasilHp);
+        horiHp2 = findViewById(R.id.hasilHp2);
+        horiTorque = findViewById(R.id.hasilTorque);
+        horiTorque2 = findViewById(R.id.hasilTorque2);
+
+        inclineAngle = findViewById(R.id.inclineAngle);
+        inclineHph = findViewById(R.id.inclineHph);
+        inclineHp = findViewById(R.id.inclineHp);
+        inclineHp2 = findViewById(R.id.inclineHp2);
 
         hpf = getIntent().getStringExtra("hpf");
         hpm = getIntent().getStringExtra("hpm");
