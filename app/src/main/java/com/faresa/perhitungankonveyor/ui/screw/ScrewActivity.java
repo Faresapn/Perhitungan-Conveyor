@@ -217,8 +217,21 @@ public class ScrewActivity extends AppCompatActivity implements MaterialAdapter.
         });
         btnDone.setOnClickListener(view -> {
             if (validateNormal() | validateScrew()){
-                Intent intent = new Intent(ScrewActivity.this, HasilScrewActivity.class);
-                startActivity(intent);
+                String getFd1 = etFd.getEditText().getText().toString();
+                String getSpeed = etSpeed.getEditText().getText().toString();
+                String getL = etL.getEditText().getText().toString();
+                String getFb1 = etFb.getEditText().getText().toString();
+                double doubleFd = Double.parseDouble(getFd1);
+                double doubleSpeed = Double.parseDouble(getSpeed);
+                double doubleL = Double.parseDouble(getL);
+                double doubleFb = Double.parseDouble(getFb1);
+                double hasilHPF = (doubleL*doubleSpeed*doubleFd*doubleFb)/1000000;
+                Log.d("hasl", String.valueOf(hasilHPF));
+
+
+
+//                Intent intent = new Intent(ScrewActivity.this, HasilScrewActivity.class);
+//                startActivity(intent);
             }
         });
 
