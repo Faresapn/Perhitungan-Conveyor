@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 import com.faresa.perhitungankonveyor.R;
 import com.faresa.perhitungankonveyor.model.DataMaterial;
@@ -49,6 +50,7 @@ public class ScrewActivity extends AppCompatActivity implements MaterialAdapter.
     TextInputLayout etMaterial,etWeight,etMaterialfac,etComponent,etSeries, etC1, etFb,etFd;
     Button btnMaterial;
     CardView cardInput;
+    LinearLayout linearHitung;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -65,6 +67,7 @@ public class ScrewActivity extends AppCompatActivity implements MaterialAdapter.
         etC1 = findViewById(R.id.materialC1);
         etFb = findViewById(R.id.materialFb);
         etFd = findViewById(R.id.materialFd);
+        linearHitung = findViewById(R.id.linearHitung);
 
         etMaterial.getEditText().setFocusable(false);
         etWeight.getEditText().setFocusable(false);
@@ -91,8 +94,10 @@ public class ScrewActivity extends AppCompatActivity implements MaterialAdapter.
         Log.d("mater", mater);
         if (mater.equals("")){
             cardInput.setVisibility(View.GONE);
+            linearHitung.setVisibility(View.GONE);
         }else {
             cardInput.setVisibility(View.VISIBLE);
+            linearHitung.setVisibility(View.VISIBLE);
         }
         if (!getC1.equals("")){
             switch (getC1) {
