@@ -4,393 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#121212">
-
+    android:background="#121212"
+    tools:context=".ui.screw.HasilScrewActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        tools:context=".ui.screw.ScrewActivity">
+        android:orientation="vertical">
 
         <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-
-            app:cardCornerRadius="4dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#0f4c75"
-                android:orientation="vertical"
-                android:padding="8dp">
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/materialName"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="3"
-                        android:textColorHint="#fff">
-
-                        <EditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:backgroundTint="#fff"
-                            android:hint="Material"
-                            android:inputType="text"
-                            android:paddingBottom="15dp"
-                            android:textColor="#fff"
-                            android:textSize="16sp" />
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <Button
-                        android:id="@+id/btnMaterial"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Pilih" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/materialWeight"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="3"
-                        android:textColorHint="#fff">
-
-                        <EditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:backgroundTint="#fff"
-                            android:hint="Weight"
-                            android:inputType="number"
-                            android:paddingBottom="15dp"
-                            android:textColor="#fff"
-                            android:textSize="16sp" />
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Lb/ft3"
-                        android:textColor="@color/white" />
-                </LinearLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/materialFactor"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColorHint="#fff">
-
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:backgroundTint="#fff"
-                        android:hint="Material Factor"
-                        android:inputType="number"
-                        android:paddingBottom="15dp"
-                        android:textColor="#fff"
-                        android:textSize="16sp" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/materialComponent"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:textColorHint="#fff">
-
-                        <EditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:backgroundTint="#fff"
-                            android:hint="Component"
-                            android:inputType="number"
-                            android:paddingBottom="15dp"
-                            android:textColor="#fff"
-                            android:textSize="16sp" />
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/materialSeries"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:textColorHint="#fff">
-
-                        <EditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:backgroundTint="#fff"
-                            android:hint="Series"
-                            android:inputType="number"
-                            android:paddingBottom="15dp"
-                            android:textColor="#fff"
-                            android:textSize="16sp" />
-                    </com.google.android.material.textfield.TextInputLayout>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/materialC1"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="3"
-                        android:textColorHint="#fff">
-
-                        <EditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:backgroundTint="#fff"
-                            android:hint="C1"
-                            android:inputType="number"
-                            android:paddingBottom="15dp"
-                            android:textColor="#fff"
-                            android:textSize="16sp" />
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="ft3/hr"
-                        android:textColor="@color/white" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/materialFd"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:textColorHint="#fff">
-
-                        <EditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:backgroundTint="#fff"
-                            android:hint="Fd"
-                            android:inputType="number"
-                            android:paddingBottom="15dp"
-                            android:textColor="#fff"
-                            android:textSize="16sp" />
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/materialFb"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:textColorHint="#fff">
-
-                        <EditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:backgroundTint="#fff"
-                            android:hint="Fb"
-                            android:inputType="number"
-                            android:paddingBottom="15dp"
-                            android:textColor="#fff"
-                            android:textSize="16sp" />
-                    </com.google.android.material.textfield.TextInputLayout>
-                </LinearLayout>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardInput"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            app:cardCornerRadius="4dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#0f4c75"
-                android:orientation="vertical"
-                android:padding="8dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Input Data"
-                    android:textAlignment="center"
-                    android:textColor="@color/white"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/screwKapasitas"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="3"
-                        android:textColorHint="#fff">
-
-                        <EditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:backgroundTint="#fff"
-                            android:hint="Kapasitas"
-                            android:inputType="number"
-                            android:paddingBottom="15dp"
-                            android:textColor="#fff"
-                            android:textSize="16sp" />
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Ton/Hr"
-                        android:textColor="@color/white" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/screwPanjang"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="3"
-                        android:textColorHint="#fff">
-
-                        <EditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:backgroundTint="#fff"
-                            android:hint="Panjang"
-                            android:inputType="number"
-                            android:paddingBottom="15dp"
-                            android:textColor="#fff"
-                            android:textSize="16sp" />
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="m"
-                        android:textColor="@color/white" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/screwJumlah"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:textColorHint="#fff">
-
-                        <EditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:backgroundTint="#fff"
-                            android:hint="Screw 1"
-                            android:inputType="number"
-                            android:paddingBottom="15dp"
-                            android:textColor="#fff"
-                            android:textSize="16sp" />
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/screwJumlah2"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:textColorHint="#fff">
-
-                        <EditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:backgroundTint="#fff"
-                            android:hint="Screw 2"
-                            android:inputType="number"
-                            android:paddingBottom="15dp"
-                            android:textColor="#fff"
-                            android:textSize="16sp" />
-                    </com.google.android.material.textfield.TextInputLayout>
-                </LinearLayout>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <LinearLayout
-            android:id="@+id/linearHitung"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/btnHitung"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Hitung" />
-
-            <Button
-                android:id="@+id/btnReset"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Reset" />
-        </LinearLayout>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardHasil"
+            android:id="@+id/cardHorizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
@@ -419,7 +42,7 @@
 
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/hasilNormal"
+                        android:id="@+id/hasilHpf"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
@@ -430,7 +53,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="8dp"
                             android:backgroundTint="#fff"
-                            android:hint="Normal Capacity"
+                            android:hint="HPF"
                             android:inputType="numberDecimal"
                             android:paddingBottom="15dp"
                             android:textColor="#fff"
@@ -441,7 +64,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="ft3/hr"
+                        android:text="HP"
                         android:textColor="@color/white" />
                 </LinearLayout>
 
@@ -452,7 +75,7 @@
 
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/hasilEquivalent"
+                        android:id="@+id/hasilHpm"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
@@ -463,7 +86,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="8dp"
                             android:backgroundTint="#fff"
-                            android:hint="Equivalent Design Capacity"
+                            android:hint="HPM"
                             android:inputType="numberDecimal"
                             android:paddingBottom="15dp"
                             android:textColor="#fff"
@@ -474,7 +97,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="ft3/hr"
+                        android:text="HP"
                         android:textColor="@color/white" />
                 </LinearLayout>
 
@@ -485,7 +108,7 @@
 
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/hasilSpeed"
+                        android:id="@+id/hasilHp"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
@@ -496,7 +119,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="8dp"
                             android:backgroundTint="#fff"
-                            android:hint="Speed of screw conveyor"
+                            android:hint="HP 1"
                             android:inputType="numberDecimal"
                             android:paddingBottom="15dp"
                             android:textColor="#fff"
@@ -507,7 +130,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="rpm"
+                        android:text="HP"
                         android:textColor="@color/white" />
                 </LinearLayout>
 
@@ -518,7 +141,7 @@
 
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/hasilLo"
+                        android:id="@+id/hasilHp2"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
@@ -529,7 +152,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="8dp"
                             android:backgroundTint="#fff"
-                            android:hint="Lo"
+                            android:hint="HP 2"
                             android:inputType="numberDecimal"
                             android:paddingBottom="15dp"
                             android:textColor="#fff"
@@ -540,7 +163,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="ft"
+                        android:text="KW"
                         android:textColor="@color/white" />
                 </LinearLayout>
 
@@ -551,7 +174,7 @@
 
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/hasilL"
+                        android:id="@+id/hasilTorque"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
@@ -562,7 +185,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="8dp"
                             android:backgroundTint="#fff"
-                            android:hint="L"
+                            android:hint="Torque 1"
                             android:inputType="numberDecimal"
                             android:paddingBottom="15dp"
                             android:textColor="#fff"
@@ -573,18 +196,199 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="ft"
+                        android:text="lb.in"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/hasilTorque2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:textColorHint="#fff">
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:backgroundTint="#fff"
+                            android:hint="Torque 2"
+                            android:inputType="numberDecimal"
+                            android:paddingBottom="15dp"
+                            android:textColor="#fff"
+                            android:textSize="16sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text=""
                         android:textColor="@color/white" />
                 </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <Button
-            android:id="@+id/btnDone"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardIncline"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Done"
-            android:layout_margin="8dp"/>
+            android:layout_margin="8dp"
+            app:cardCornerRadius="4dp">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#0f4c75"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Incline Conveyor"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inclineAngle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:textColorHint="#fff">
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:backgroundTint="#fff"
+                            android:hint="Angle Inclinasi"
+                            android:inputType="numberDecimal"
+                            android:paddingBottom="15dp"
+                            android:textColor="#fff"
+                            android:textSize="16sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Degree"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inclineHph"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:textColorHint="#fff">
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:backgroundTint="#fff"
+                            android:hint="HpH"
+                            android:inputType="numberDecimal"
+                            android:paddingBottom="15dp"
+                            android:textColor="#fff"
+                            android:textSize="16sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="HP"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inclineHp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:textColorHint="#fff">
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:backgroundTint="#fff"
+                            android:hint="HP 1"
+                            android:inputType="numberDecimal"
+                            android:paddingBottom="15dp"
+                            android:textColor="#fff"
+                            android:textSize="16sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="HP"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inclineHp2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:textColorHint="#fff">
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:backgroundTint="#fff"
+                            android:hint="HP 2"
+                            android:inputType="numberDecimal"
+                            android:paddingBottom="15dp"
+                            android:textColor="#fff"
+                            android:textSize="16sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="KW"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
     </LinearLayout>
+
 </ScrollView>
